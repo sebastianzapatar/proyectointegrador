@@ -1,5 +1,5 @@
 # proyectointegrador
-El presente proyecto es sobre una tienda Gamer, llamada tienda Gamer Latam, para Colombia y Argentina. La página tiene como objetivo la venta, armado,reparación y manteminiento de computadores para juegos, desde computadores de entrada hasta computadores para competencia. <br>
+El presente proyecto es sobre una tienda Gamer, llamada tienda Gamer LATAM, para Colombia y Argentina. La página tiene como objetivo la venta, armado,reparación y manteminiento de computadores para juegos, desde computadores de entrada hasta computadores para competencia. <br>
 
 La tienda tiene como publico objetivo los gamers, sin embargo también nos centramos en el trabajo infomático en general para estudiantes y oficinas. <br>
 
