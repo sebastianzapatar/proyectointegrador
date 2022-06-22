@@ -16,5 +16,5 @@ https://www.logg.com.ar/ <br>
 https://libreopcion.com/<br>
 Esperamos que el proyecto sea de su agrado :sweat_smile: <br>
 
-Los integrantes somos
+Los integrantes somos:<br>
 Sebastián Zapata: Profesor Universitario en la Universidad eia, prospecto de desarrollador fullstack :stuck_out_tongue_winking_eye: con 33 años de edad :smile:
