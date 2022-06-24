@@ -22,3 +22,5 @@ Sebastián Zapata: Profesor Universitario en la Universidad eia, prospecto de de
 Bautista Cozzani: 18 años de edad. Estudiante de Programación Web Full Stack en Digital House. Actualmente trabajando para la Federacion Del Deporte Universitario Argentino.
 
 Andres Tognetti: Soporte tecnico en computacion, tengo 21 años, cursando fullstack y fotografo en medios de compunicacion.
+
+Tomas Salim: 22 años de edad. Estudiante de Programación Web Full Stack en Digital House. Trabajo en el Banco Santander
