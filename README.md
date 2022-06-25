@@ -24,3 +24,5 @@ Bautista Cozzani: 18 años de edad. Estudiante de Programación Web Full Stack e
 Andres Tognetti: Soporte tecnico en computacion, tengo 21 años, cursando fullstack y fotografo en medios de comunicación.
 
 Tomas Salim: 22 años de edad. Estudiante de Programación Web Full Stack en Digital House. Trabajo en el Banco Santander
+
+Agustin Valdera: 22 años de edaad, estudio programacion web full stack y contador publico en la UNM. Actualmente trabajo en las redes de una muebleria.
