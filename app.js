@@ -12,6 +12,3 @@ app.get('/registro', (req, res)=>{
     res.sendFile(htmlPath)
 });
 app.listen(port, ()=>console.log("funcionando en localhost:"+port));
-app.get('/home',(req,res)=>{
-    res.send("Corriendo el home");
-})
