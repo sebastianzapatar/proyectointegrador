@@ -1,0 +1,61 @@
+.box1{
+display: flex;
+height: 15vh;
+justify-content: center;
+
+}
+
+hr{
+margin-top: 0.1% ;
+margin-bottom:1.4% ;
+margin-left: 2%;
+margin-right: 2%;
+}
+
+.box1 h2{
+text-decoration: none;
+color: black;
+margin: 3%;
+background-color: #B5B5B5;
+}
+
+.box1 i{
+margin: 3%;
+}
+
+.box1 a{
+margin: 0.8%
+}
+
+.box1 input{
+width: 40vw;
+height: 30%;
+margin: 2%;
+}
+
+.box2{
+display: flex;
+height: 5.7vh;
+justify-content: space-evenly;
+background-color: #5ccb5f;
+margin-bottom: 1.6%;
+}
+
+.box2 ul a{
+margin: 100px;
+text-decoration: none;
+color: black;
+}
+
+.box2 ul a:hover{
+ font-family: 'Times New Roman', Times, serif;
+ font-size: larger;
+ color: blue
+}
+
+/* 
+#003400
+#006414
+#009929
+#5ccb5f
+#98ff96 */
