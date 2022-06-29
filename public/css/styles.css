@@ -52,7 +52,31 @@ color: black;
  font-size: larger;
  color: blue
 }
-
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #98ff96;
+    border: 1px solid black;
+}
+footer .contacto{
+    width: 55%;
+    font-family: 'Roboto';
+    margin: 2%;
+    display: flex;
+    flex-direction: row;
+}
+footer .contacto .contactenos{
+    width: 45%;
+    height: 95%;
+    border: 1px solid black;
+}
+footer .redes{
+    width: 45%;
+    justify-content: space-between;
+}
+footer .redes i{
+    margin-left: 5%;
+}
 /* 
 #003400
 #006414
