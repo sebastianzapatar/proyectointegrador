@@ -55,7 +55,7 @@ color: black;
 footer{
     display: flex;
     justify-content: space-evenly;
-    background-color: #98ff96;
+    background-color: #5ccb5f;
     border: 1px solid black;
 }
 footer .contacto{
