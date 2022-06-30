@@ -14,4 +14,8 @@ app.get('/registro', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'registro.html');
     res.sendFile(htmlPath)
 });
+app.get('/carritodecompras', (req, res)=>{
+    const htmlPath=path.resolve(__dirname,rutaAbsoluta+'carrito.html');
+    res.sendFile(htmlPath)
+});
 app.listen(port, ()=>console.log("funcionando en localhost:"+port));
