@@ -37,7 +37,7 @@ margin: 2%;
 display: flex;
 height: 5.7vh;
 justify-content: space-evenly;
-background-color: #5ccb5f;
+background-color: #98ff96;
 margin-bottom: 1.6%;
 }
 
@@ -55,7 +55,7 @@ color: black;
 footer{
     display: flex;
     justify-content: space-evenly;
-    background-color: #5ccb5f;
+    background-color: #98ff96;
     border: 1px solid black;
 }
 footer .contacto{
