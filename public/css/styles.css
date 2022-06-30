@@ -71,8 +71,13 @@ footer .contacto .contactenos{
     border: 1px solid black;
 }
 footer .redes{
+    margin: 2%;
     width: 45%;
     justify-content: space-between;
+    border: 1px solid black;
+}
+footer .redes h4{
+    margin-left: 1%;
 }
 footer .redes i{
     margin-left: 5%;
