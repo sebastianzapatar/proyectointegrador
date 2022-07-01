@@ -18,4 +18,8 @@ app.get('/carritodecompras', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'carrito.html');
     res.sendFile(htmlPath)
 });
+app.get('/login', (req, res)=>{
+    const htmlPath=path.resolve(__dirname,rutaAbsoluta+'login.html');
+    res.sendFile(htmlPath)
+});
 app.listen(port, ()=>console.log("funcionando en localhost:"+port));
