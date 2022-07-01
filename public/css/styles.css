@@ -1,3 +1,4 @@
+/* CSS DEL HEADER */
 .box1{
 display: flex;
 height: 15vh;
@@ -52,6 +53,9 @@ color: black;
  font-size: larger;
  color: blue
 }
+/* CSS DEL HEADER */
+
+/* CSS DEL FOOTER */
 footer{
     display: flex;
     justify-content: space-evenly;
@@ -82,7 +86,36 @@ footer .redes h4{
 footer .redes i{
     margin-left: 5%;
 }
-/* 
+/* CSS DEL FOOTER */
+
+
+/* CSS DEL HOME */
+/* aca pongan su codigo */
+/* CSS DEL HOME */
+
+
+/* CSS DEL LOGIN */
+/* aca pongan su codigo */
+/* CSS DEL LOGIN */
+
+
+/* CSS DEL CARRITO */
+/* aca pongan su codigo */
+/* CSS DEL CARRITO */
+
+
+/* CSS DEL REGISTRO */
+/* aca pongan su codigo */
+/* CSS DEL REGISTRO */
+
+
+/* CSS DE PRODUCTOS */
+/* aca pongan su codigo */
+/* CSS DE PRODUCTOS */
+
+
+
+/* colores: 
 #003400
 #006414
 #009929
