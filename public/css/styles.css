@@ -101,7 +101,52 @@ footer .redes i{
 
 
 /* CSS DEL HOME */
-/* aca pongan su codigo */
+.productos{
+    display: flex;
+    justify-content: center;
+}
+
+.imagenPrincipal{
+    width: 100%;
+    height: 70vh;
+    margin: 0 auto;
+}
+
+main{   
+    justify-content: center;
+}
+
+.producto1{
+    border: 1px solid rgb(204, 198, 198);
+    width: 17%;
+    margin: 1%;
+    
+}
+
+.producto1 img{
+    margin-left: 20%;
+    margin-top: 4%;
+    border: 1px solid rgb(204, 198, 198) 
+}  
+
+.descripcionDelProducto{
+    margin: 3%;
+}
+
+.precio{
+    margin: 3%;
+}
+
+.agregarAlCarrito{
+    margin: 3%;
+    align-self: flex-end;
+}
+
+.agregarAlCarrito:hover{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    color: blue
+} 
 /* CSS DEL HOME */
 
 
