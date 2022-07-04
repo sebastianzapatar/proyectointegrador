@@ -12,12 +12,16 @@ margin-bottom:1.4% ;
 margin-left: 2%;
 margin-right: 2%;
 }
-
-.box1 h2{
+.box1 a{
+    text-decoration: none;
+}
+.box1 a h2{
 text-decoration: none;
 color: black;
-margin: 3%;
+margin: 1%;
 background-color: #B5B5B5;
+font-family: 'Roboto';
+
 }
 
 .box1 i{
@@ -73,6 +77,13 @@ footer .contacto .contactenos{
     width: 45%;
     height: 95%;
     border: 1px solid black;
+    margin: 1%;
+}
+footer .contacto .contactenos2{
+    width: 45%;
+    height: 95%;
+    border: 1px solid black;
+    margin: 1%;
 }
 footer .redes{
     margin: 2%;
@@ -107,8 +118,59 @@ footer .redes i{
 /* CSS DEL REGISTRO */
 /* aca pongan su codigo */
 /* CSS DEL REGISTRO */
+.registro{
+    display: flex;
+    justify-content: space-evenly;
+}
+.registro form{
+    
+    border: 3px solid #98ff96;
+    border-radius: 25px;
+    margin-bottom: 2%;
+    margin-right: 5%;
+    width: 40%;
+    
+}
+.registro form input{
+    width: 98%;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+.registro form label{
+    font-family: 'Roboto';
+}
 
-
+@media (max-width: 600px) {
+    .registro{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer .contacto{
+        width: 100%;
+    }
+    footer .contacto .contactenos{
+        width: 100%;
+        margin: 1%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    footer .contacto .contactenos2{
+        display: none;
+    }
+    footer.redes{
+        width: 100%;
+    }
+}
 /* CSS DE PRODUCTOS */
 /* aca pongan su codigo */
 /* CSS DE PRODUCTOS */
