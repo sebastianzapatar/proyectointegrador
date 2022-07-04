@@ -1,0 +1,123 @@
+/* CSS DEL HEADER */
+.box1{
+display: flex;
+height: 15vh;
+justify-content: center;
+
+}
+
+hr{
+margin-top: 0.1% ;
+margin-bottom:1.4% ;
+margin-left: 2%;
+margin-right: 2%;
+}
+
+.box1 h2{
+text-decoration: none;
+color: black;
+margin: 3%;
+background-color: #B5B5B5;
+}
+
+.box1 i{
+margin: 3%;
+}
+
+.box1 a{
+margin: 0.8%
+}
+
+.box1 input{
+width: 40vw;
+height: 30%;
+margin: 2%;
+}
+
+.box2{
+display: flex;
+height: 5.7vh;
+justify-content: space-evenly;
+background-color: #98ff96;
+margin-bottom: 1.6%;
+}
+
+.box2 ul a{
+margin: 100px;
+text-decoration: none;
+color: black;
+}
+
+.box2 ul a:hover{
+ font-family: 'Times New Roman', Times, serif;
+ font-size: larger;
+ color: blue
+}
+/* CSS DEL HEADER */
+
+/* CSS DEL FOOTER */
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #98ff96;
+    border: 1px solid black;
+}
+footer .contacto{
+    width: 55%;
+    font-family: 'Roboto';
+    margin: 2%;
+    display: flex;
+    flex-direction: row;
+}
+footer .contacto .contactenos{
+    width: 45%;
+    height: 95%;
+    border: 1px solid black;
+}
+footer .redes{
+    margin: 2%;
+    width: 45%;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+footer .redes h4{
+    margin-left: 1%;
+}
+footer .redes i{
+    margin-left: 5%;
+}
+/* CSS DEL FOOTER */
+
+
+/* CSS DEL HOME */
+/* aca pongan su codigo */
+/* CSS DEL HOME */
+
+
+/* CSS DEL LOGIN */
+/* aca pongan su codigo */
+/* CSS DEL LOGIN */
+
+
+/* CSS DEL CARRITO */
+/* aca pongan su codigo */
+/* CSS DEL CARRITO */
+
+
+/* CSS DEL REGISTRO */
+/* aca pongan su codigo */
+/* CSS DEL REGISTRO */
+
+
+/* CSS DE PRODUCTOS */
+/* aca pongan su codigo */
+/* CSS DE PRODUCTOS */
+
+
+
+/* colores: 
+#003400
+#006414
+#009929
+#5ccb5f
+#98ff96 */

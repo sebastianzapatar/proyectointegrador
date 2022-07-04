@@ -16,3 +16,13 @@ https://www.logg.com.ar/ <br>
 https://libreopcion.com/<br>
 Esperamos que el proyecto sea de su agrado :sweat_smile: <br>
 
+Los integrantes somos:<br>
+Sebastián Zapata: Profesor Universitario en la Universidad eia, prospecto de desarrollador fullstack :stuck_out_tongue_winking_eye: con 33 años de edad :smile:
+
+Bautista Cozzani: 18 años de edad. Estudiante de Programación Web Full Stack en Digital House. Actualmente trabajando para la Federacion Del Deporte Universitario Argentino.
+
+Andres Tognetti: Soporte tecnico en computacion, tengo 21 años, cursando fullstack y fotografo en medios de comunicación.
+
+Tomas Salim: 22 años de edad. Estudiante de Programación Web Full Stack en Digital House. Trabajo en el Banco Santander
+
+Agustin Valdera: 22 años de edad, estudio programacion web full stack y contador publico en la UNM. Actualmente trabajo en las redes de una muebleria.
