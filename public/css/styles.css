@@ -141,6 +141,7 @@ footer .redes i{
     font-family: 'Roboto';
 }
 
+
 @media (max-width: 600px) {
     .registro{
         display: flex;
@@ -169,6 +170,9 @@ footer .redes i{
     }
     footer.redes{
         width: 100%;
+    }
+    main .imagen{
+        display: none;
     }
 }
 /* CSS DE PRODUCTOS */
