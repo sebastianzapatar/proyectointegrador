@@ -185,7 +185,18 @@ main{
 .registro form label{
     font-family: 'Roboto';
 }
-
+.registro .imagen{
+    width: 30%;
+    display: flex;
+    border: 3px solid #98ff96;
+    border-radius: 25px;
+    margin-bottom: 2%;
+    align-items: center;
+    justify-content: center;
+}
+.registro .imagen img{
+    width: 85%;
+}
 
 @media (max-width: 600px) {
     .registro{
@@ -216,7 +227,10 @@ main{
     footer.redes{
         width: 100%;
     }
-    main .imagen{
+    .registro .imagen{
+        display: none;
+    }
+    .registro .imagen img{
         display: none;
     }
 }
