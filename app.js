@@ -6,6 +6,10 @@ const path=require('path');
 const rutaAbsoluta='./views/';
 app.use(express.static('public'));
 
+app.get('/', (req, res)=>{
+    const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home.html');
+    res.sendFile(htmlPath)
+});
 app.get('/home', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home.html');
     res.sendFile(htmlPath)

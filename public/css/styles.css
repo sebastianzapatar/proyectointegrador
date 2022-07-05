@@ -58,7 +58,24 @@ color: black;
  color: blue
 }
 /* CSS DEL HEADER */
-
+@media (max-width: 700px){
+    .box2{
+        display: none;
+        transition: 1s;
+    }
+    header:hover .box2{
+        display: block;
+        justify-content: wrap;
+        background-color: #98ff96;
+        margin-bottom: 1.6%;
+        transition: 1s;
+    }
+    .box2 ul a:hover{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: larger;
+        color: blue
+    }
+}
 /* CSS DEL FOOTER */
 footer{
     display: flex;
@@ -198,7 +215,7 @@ main{
     width: 85%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .registro{
         display: flex;
         flex-direction: column;
