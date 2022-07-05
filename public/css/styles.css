@@ -187,17 +187,33 @@ main{
 .registro form{
     
     border: 3px solid #98ff96;
-    border-radius: 25px;
+    border-radius: 15px;
     margin-bottom: 2%;
     margin-right: 5%;
     width: 40%;
     
+}
+button {
+    background-color: #003400; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 .registro form input{
     width: 98%;
     box-sizing: border-box;
     padding: 12px 20px;
     margin: 8px 0;
+}
+.registro form textarea{
+    width: 98%;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    margin: 6px 0; 
 }
 .registro form label{
     font-family: 'Roboto';
