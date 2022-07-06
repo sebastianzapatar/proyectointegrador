@@ -173,7 +173,46 @@ main{
 
 
 /* CSS DEL CARRITO */
-/* aca pongan su codigo */
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.titulos1 {
+    display: flex;      
+    margin-right: 205px;
+    text-decoration: underline 4px #98ff96;
+}
+
+.titulos2 {
+    display: flex;      
+    margin-right: 125px;
+    text-decoration: underline 4px #98ff96;
+}
+
+.carrito {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 3px solid #98ff96;
+}
+
+.producto1c {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: 45px;
+    padding: 30px;
+}
+
+.buttonCompra {
+   align-self: center;
+   margin-bottom: 75px;
+}
+
+
 /* CSS DEL CARRITO */
 
 
