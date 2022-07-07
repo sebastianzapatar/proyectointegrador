@@ -30,4 +30,8 @@ app.get('/productos', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos.html');
     res.sendFile(htmlPath)
 });
+app.get('/ayuda', (req, res)=>{
+    const htmlPath=path.resolve(__dirname,rutaAbsoluta+'ayuda.html');
+    res.sendFile(htmlPath)
+});
 app.listen(port, ()=>console.log("funcionando en localhost:"+port));
