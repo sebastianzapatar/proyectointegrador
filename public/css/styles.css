@@ -16,12 +16,13 @@ margin-right: 2%;
     text-decoration: none;
 }
 .box1 a h2{
-text-decoration: none;
+    
 color: black;
-margin: 1%;
-background-color: #B5B5B5;
+margin: 11%;
 font-family: 'Roboto';
-
+}
+.box1 a h2:hover{
+    color: blue
 }
 
 .box1 i{
@@ -57,7 +58,45 @@ color: black;
  font-size: larger;
  color: blue
 }
-/* CSS DEL HEADER */
+@media (min-width: 0px) and  (max-width: 480px){
+
+    .box2{
+        display: none;
+    }
+    header .logo{
+        display: none;
+    }
+    main .imagenPrincipal{
+        display: none;  
+    }
+    main .producto2, .producto3, .producto4, .producto5{
+    display: none;
+    }
+main .producto1{
+    width: 60%;
+}
+}
+
+@media (min-width: 481px) and  (max-width: 768px){
+
+    .box2{
+        display: none;
+    }}
+
+@media (min-width: 769px) and  (max-width: 1279px){
+
+    .box2{
+        display: none;
+    }
+    .fa-solid{
+        display: none;
+    }
+}
+
+.fa-solid{
+    justify-content: center;
+}
+/* 
 @media (max-width: 700px){
     .box2{
         display: none;
@@ -75,7 +114,8 @@ color: black;
         font-size: larger;
         color: blue
     }
-}
+} */
+/* CSS DEL HEADER */
 /* CSS DEL FOOTER */
 footer{
     display: flex;
@@ -133,21 +173,23 @@ main{
     justify-content: center;
 }
 
-.producto1{
+.producto1, .producto2, .producto3, .producto4, .producto5 {
     border: 1px solid rgb(204, 198, 198);
     width: 17%;
     margin: 1%;
+    box-shadow: 5px 5px 5px 5px gray;
+    font-family: Arial, Helvetica, sans-serif;
+    
     
 }
-
-.producto1 img{
-    margin-left: 20%;
-    margin-top: 4%;
-    border: 1px solid rgb(204, 198, 198) 
+.productos img{
+   margin-top: 5%;
+   margin-left: 15%;
 }  
 
 .descripcionDelProducto{
     margin: 3%;
+   
 }
 
 .precio{
@@ -164,6 +206,14 @@ main{
     font-size: larger;
     color: blue
 } 
+.fa-arrow-right-long{
+    margin-top: 10%;
+}
+
+.fa-arrow-left-long{
+    margin-top: 10%;
+}
+
 /* CSS DEL HOME */
 
 
@@ -255,11 +305,11 @@ main{
 /* aca pongan su codigo */
 /* CSS DE PRODUCTOS */
 
-
-
 /* colores: 
 #003400
 #006414
 #009929
 #5ccb5f
 #98ff96 */
+
+   
