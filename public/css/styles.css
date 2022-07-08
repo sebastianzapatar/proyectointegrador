@@ -354,6 +354,13 @@ input[type="password"]{
     text-align: center;
     color: #999
 }
+
+.recordar{
+    text-align: center;
+    color: blue;
+
+}
+
 /* CSS DEL LOGIN */
 
 /* CSS DEL CARRITO */
