@@ -331,14 +331,14 @@ background-size: cover;
 
 .titulo-login{
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;;
 }
 
 input[type="text"],
 input[type="password"]{
-    font-size: 18px;
+    font-size: 19px;
     width: 82%;
     padding: 10px;
     border: none;
@@ -350,16 +350,18 @@ input[type="password"]{
 }
 
 .icon{
-    min-width: 30px;
-    text-align: center;
-    color: #999
+    min-width: 40px;
+    color: #999;
+    align-items: center;
 }
 
 .recordar{
-    text-align: center;
     color: blue;
-
+    text-align: center;
 }
+
+
+
 
 /* CSS DEL LOGIN */
 
