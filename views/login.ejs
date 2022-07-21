@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Productos</title>
+    <link rel="icon" href="/img/imgGeneral/logo.png">
+</head>
+<body class="bodylogin">
+
+    <%- include('./partials/header') %>
+
+    <div class="container-modal">
+        <div class="content-modal">
+            <form class="formulario">
+                <h1 class="titulo-login">Iniciar sesion</h1>
+                <div class="contenedor">
+                    <div class="input-contenedor">
+                        <i class="fa-regular fa-envelope icon"></i>
+                        <input type="text" placeholder="Correo electronico">
+                    </div>
+                    <br>
+                    <div class="input-contenedor">
+                        <i class="fa-solid fa-key icon"></i>
+                        <input type="password" minlength="6" maxlength="9" placeholder="Contraseña">
+                    </div>
+                    <br>
+                    <input type="submit" value="Iniciar Sesion" class="button">
+                    <br>
+                    <p class="p-login">
+                        Al registrarte, aceptas nuestras condiciones de uso y Politica de privacidad.
+                    </p>
+                    <br>
+                    <p class="p-login">¿No tienes una cuenta? <a class="link" href="/registro"> Registrate </a></p>
+                    <div class="btn-cerrar">
+                        <label for="btn-modal"> Cerrar </label>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('./partials/footer') %>
+
+    </div>
+</body>
+</html>

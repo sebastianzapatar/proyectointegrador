@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Tienda Gamer LATAM</title>
+    <link rel="icon" href="/img/imgGeneral/logo.png">
+</head>
+
+<body>
+
+    <%- include('./partials/header') %>
+
+   <main>
+    <img src="/img/imgHome/imgprincipal.webp" alt="imagen principal" width="800px" class="imagenPrincipal">
+    <h1 class="productosDestacados">Productos destacados:</h1>
+    <div class="productos">
+        <i class="fa-solid fa-arrow-left-long"></i> 
+    <div class="producto1">
+         <img src="/img/imgHome/auris.jpg" alt="auriculares" width="200px">
+         <p class= "descripcionDelProducto"> AURICULARES HYPERX CLOUD FLIGHT WIRELESS
+         <p class= "precio">$14.000</p>
+         <p class= "agregarAlCarrito">Agregar al carrito</p>
+    </div>
+    <div class="producto2">
+         <img src="/img/imgHome/gabinete.jpg" alt="gabinete" width="200px">
+         <p class= "descripcionDelProducto"> GABINETE SATELLITE GAMER K871 FUENTE 750W 80 PLUS BRONZE 3 COOLER
+         <p class= "precio">$6.000</p>
+         <p class= "agregarAlCarrito">Agregar al carrito</p>
+    </div>
+    <div class="producto3">
+         <img src="/img/imgHome/madre.jpg" alt="madre" width="200px">
+         <p class= "descripcionDelProducto"> MOTHER GIGABYTE B660M AORUS PRO DDR4 S1700
+         <p class= "precio">$23.200</p>
+         <p class= "agregarAlCarrito">Agregar al carrito</p> 
+    </div>
+    <div class="producto4">
+         <img src="/img/imgHome/pcArmada.jpg" alt="pcArmada" width="200px">
+         <p class= "descripcionDelProducto"> PC AMD RYZEN 5 5600G 8GB 240GB
+         <p class= "precio">$153.200</p>
+         <p class= "agregarAlCarrito">Agregar al carrito</p>
+    </div>
+    <div class="producto5">
+         <img src="/img/imgHome/refri.jpg" alt="refri" width="200px">
+         <p class= "descripcionDelProducto">MICRO AMD RYZEN 5 PRO 4650G C/VIDEO C/COOLER
+         <p class= "precio">$13.200</p>
+         <p class= "agregarAlCarrito">Agregar al carrito</p>
+    </div>
+    <i class="fa-solid fa-arrow-right-long"></i> 
+    </div>
+     
+       </main>
+   
+       <%- include('./partials/footer') %>
+</body>
+</html>
