@@ -331,14 +331,14 @@ background-size: cover;
 
 .titulo-login{
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;;
 }
 
 input[type="text"],
 input[type="password"]{
-    font-size: 18px;
+    font-size: 19px;
     width: 82%;
     padding: 10px;
     border: none;
@@ -350,51 +350,99 @@ input[type="password"]{
 }
 
 .icon{
-    min-width: 30px;
-    text-align: center;
-    color: #999
+    min-width: 40px;
+    color: #999;
+    align-items: center;
 }
+
+.recordar{
+    color: blue;
+    text-align: center;
+}
+
+
+
+
 /* CSS DEL LOGIN */
 
 /* CSS DEL CARRITO */
 
+.carrito {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #98ff96;
+}
+
+.titulocarrito {
+    font-family: 'Roboto';
+    margin-left: 25px;
+}
+
 .titulo {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-around;
+    text-decoration: underline 4px #98ff96;
+    font-family: 'Roboto';
+    margin-left: 31%;
+
 }
 
 .titulos1 {
     display: flex;      
     margin-right: 205px;
     text-decoration: underline 4px #98ff96;
+    font-family: 'Roboto';
+
 }
 
 .titulos2 {
     display: flex;      
     margin-right: 125px;
     text-decoration: underline 4px #98ff96;
+    font-family: 'Roboto';
 }
 
-.carrito {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border: 3px solid #98ff96;
+.titulos3 {
+    display: flex;      
+    margin-right: 255px;
+    text-decoration: underline 4px #98ff96;
+    font-family: 'Roboto';
 }
 
-.producto1c {
+.productos-carrito {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-right: 45px;
-    padding: 30px;
-} 
-
-.buttonCompra {
-   align-self: center;
-   margin-bottom: 75px;
+    align-items: center;
+    font-family: Arial;
+    padding: 40px;
 }
+
+.producto-texto {
+    width: 20%
+}
+
+
+.button-cantidad {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 1px solid #98ff96;
+}
+
+.text-carrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-radius: 5px;
+    border: 1px solid #98ff96;
+}
+
+
+
+
 /* CSS DEL CARRITO */
 
 
