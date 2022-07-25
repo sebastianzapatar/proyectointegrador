@@ -11,7 +11,9 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res)=>{const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
     res.render(htmlPath)
 });
-    
+app.get('/agregar', (req, res)=>{const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
+    res.render(htmlPath)
+});
 app.get('/home', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
     res.render(htmlPath)
