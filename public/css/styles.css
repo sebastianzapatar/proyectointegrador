@@ -601,24 +601,3 @@ font-family: Arial, Helvetica, sans-serif; */
 /*
 css agregar
 */
-.agregar{
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.agregar form{
-    
-    border: 3px solid #98ff96;
-    border-radius: 15px;
-    margin-bottom: 2%;
-    margin-right: 5%;
-    width: 100%;
-    
-}
-.agregar form input{
-    width: 100%;
-    box-sizing: border-box;
-    padding: 12px 20px;
-    margin: 8px 0;
-}
