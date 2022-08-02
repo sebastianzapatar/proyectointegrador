@@ -1,0 +1,46 @@
+[{
+    "id":1,
+    "categoria": "computadoras",
+    "name":"PC AMD RYZEN 5 5600G 8GB 240GB",
+    "price":153.200,
+    "discount":0,
+    "image":"/img/imgHome/pcArmada.jpg",
+    "type":"productos destacados"},
+    
+ {
+    "id":2,
+    "categoria": "gabinetes",
+    "name":"GABINETE SATELLITE GAMER K871 FUENTE 750W 80 PLUS BRONZE 3 COOLER",
+    "price":6.000,
+    "discount":0,
+    "image":"/img/imgHome/gabinete.jpg",
+    "type":"productos destacados"},
+
+ {
+    "id":3,
+    "categoria": "auriculares",
+    "name":"HYPERX CLOUD FLIGHT WIRELESS",
+    "price":14.000,
+    "discount":0,
+    "image":"/img/imgHome/auris.jpg",
+    "type":"productos destacados"},
+
+{
+    "id":4,
+    "categoria": "mothers",
+    "name":"MOTHER GIGABYTE B660M AORUS PRO DDR4 S1700",
+    "price":23.200,
+    "discount":0,
+    "image":"/img/imgHome/madre.jpg",
+    "type":"productos destacados"},
+                     
+{
+    "id":5,
+    "categoria": "collers",
+    "name":"MICRO AMD RYZEN 5 PRO 4650G C/VIDEO C/COOLER",
+    "price":13.200,
+    "discount":0,
+    "image":"/img/imgHome/refri.jpg",
+    "type":"productos destacados"}
+                
+]
