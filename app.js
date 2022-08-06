@@ -3,14 +3,17 @@ const app=express();
 const port=3100;
 const { dirname } = require('path');
 const path=require('path');
+const fs = require('fs');
+const productsRouter=require('./routes/productos');
+
+
+
 const rutaAbsoluta='./views/';
 app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res)=>{const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
-    res.render(htmlPath)
-});
+app.use('/',productsRouter);
 app.get('/agregar', (req, res)=>{const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
     res.render(htmlPath)
 });

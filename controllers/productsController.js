@@ -1,15 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/productos.json');
+const rutaAbsoluta='../views/';
+const productsFilePath = path.join(__dirname, '../src/data/productos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+const { dirname } = require('path');
+const productsRouter=require('../routes/productos');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		res.render('products', {
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
+		res.render(htmlPath, {
 			products,
 			toThousand
 		})
