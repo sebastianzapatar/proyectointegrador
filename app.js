@@ -5,12 +5,12 @@ const { dirname } = require('path');
 const path=require('path');
 const fs = require('fs');
 const productsRouter=require('./routes/productos');
-
+const methodOverride = require('method-override')
 
 
 const rutaAbsoluta='./views/';
 app.use(express.static('public'));
-
+app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
 app.use('/',productsRouter);
@@ -33,10 +33,7 @@ app.get('/login', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'login');
     res.render(htmlPath)
 });
-app.get('/productos', (req, res)=>{
-    const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
-    res.render(htmlPath)
-});
+
 app.get('/ayuda', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'ayuda');
     res.render(htmlPath)

@@ -33,9 +33,16 @@
          <img src="<%= products.image %>" alt="<%= products.name %>" width="200px">
          <p class= "descripcionDelProducto"> <%= products.name %>
          <p class= "precio"><%= products.price %></p>
-         <p class= "agregarAlCarrito">Agregar al carrito</p>
-        
-         <p><a href="/productos/<%= products.id %>">Ver detalle</a></p>
+         <form method="POST" action="/eliminar/<%- products.id %>?_method=DELETE">
+            <input type="hidden" name="_method" value="delete">
+           <button type="submit">
+            <a
+
+            class="btn-floating btn-small waves-effect waves-light red"
+            ><i class="material-icons">delete</i></a
+          >
+           </button> 
+</form>
     </div>
     <% }); %>
     

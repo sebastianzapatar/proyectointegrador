@@ -20,14 +20,27 @@ const controller = {
 
 	// Detail - Detail from one product
 	detail: (req, res) => {
-		let id = req.params.id
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
+		let id = req.params.id;
 		let product = products.find(product => product.id == id)
-		res.render('detail', {
+		res.render(htmlPath, {
 			product,
 			toThousand
 		})
 	},
-
+	productos: (req, res) => {
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
+		
+		res.render(htmlPath)
+	},
+	borrar: (req, res) => {
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'borrar');
+		
+		res.render(htmlPath, {
+			products,
+			toThousand
+		})
+	},
 	// Create - Form to create
 	create: (req, res) => {
 		res.render('product-create-form')
