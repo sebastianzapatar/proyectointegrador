@@ -52,12 +52,12 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		let image
-		/*console.log(req);
-		if(req.file[0] != undefined){
-			image = req.file[0].filename
+		let image;
+		
+		/*if(req.file[0] != undefined){
+			image = '/img/imgHome/'+req.files[0].filename;
 		} else {*/
-			image = 'default-image.png'
+			image = '/img/imgHome/madre.jpg'
 		//}
 		let newProduct = {
 			id: getRandomInt(1500000),

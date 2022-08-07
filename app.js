@@ -4,6 +4,7 @@ const port=3100;
 const { dirname } = require('path');
 const path=require('path');
 const fs = require('fs');
+const bp = require('body-parser');
 const productsRouter=require('./routes/productos');
 const methodOverride = require('method-override')
 
@@ -12,7 +13,8 @@ const rutaAbsoluta='./views/';
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
-
+app.use(bp.json())
+app.use(bp.urlencoded({ extended: true }))
 app.use('/',productsRouter);
 
 app.get('/registro', (req, res)=>{

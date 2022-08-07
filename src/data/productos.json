@@ -34,5 +34,21 @@
   "discount": 0,
   "image": "/img/imgHome/refri.jpg",
   "type": "productos destacados"
+ },
+ {
+  "id": 668519,
+  "imagen": "firma.PNG",
+  "name": "erew",
+  "price": "4442",
+  "productos": "4242",
+  "image": "/img/imgHome/madre.jpg"
+ },
+ {
+  "id": 398215,
+  "imagen": "firma.PNG",
+  "name": "Seguimos en el intento",
+  "price": "134",
+  "productos": "3134",
+  "image": "/img/imgHome/madre.jpg"
  }
 ]
