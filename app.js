@@ -14,13 +14,7 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
 app.use('/',productsRouter);
-app.get('/agregar', (req, res)=>{const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
-    res.render(htmlPath)
-});
-app.get('/home', (req, res)=>{
-    const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
-    res.render(htmlPath)
-});
+
 app.get('/registro', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'registro');
     res.render(htmlPath)

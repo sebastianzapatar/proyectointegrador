@@ -7,7 +7,9 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { dirname } = require('path');
 const productsRouter=require('../routes/productos');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+function getRandomInt(max) {
+	return Math.floor(Math.random() * max);
+  }
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
@@ -43,20 +45,22 @@ const controller = {
 	},
 	// Create - Form to create
 	create: (req, res) => {
-		res.render('product-create-form')
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
+		
+		res.render(htmlPath)
 	},
 	
 	// Create -  Method to store
 	store: (req, res) => {
 		let image
-		console.log(req.files);
-		if(req.files[0] != undefined){
-			image = req.files[0].filename
-		} else {
+		/*console.log(req);
+		if(req.file[0] != undefined){
+			image = req.file[0].filename
+		} else {*/
 			image = 'default-image.png'
-		}
+		//}
 		let newProduct = {
-			id: products[products.length - 1].id + 1,
+			id: getRandomInt(1500000),
 			...req.body,
 			image: image
 		};
@@ -106,7 +110,8 @@ const controller = {
 		let finalProducts = products.filter(product => product.id != id);
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
 		res.redirect('/');
-	}
+	},
+	
 };
 
 module.exports = controller;

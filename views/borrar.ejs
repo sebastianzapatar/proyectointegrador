@@ -33,7 +33,7 @@
          <img src="<%= products.image %>" alt="<%= products.name %>" width="200px">
          <p class= "descripcionDelProducto"> <%= products.name %>
          <p class= "precio"><%= products.price %></p>
-         <form method="POST" action="/eliminar/<%- products.id %>?_method=DELETE">
+         <form method="POST" action="/productos/<%- products.id %>?_method=DELETE">
             <input type="hidden" name="_method" value="delete">
            <button type="submit">
             <a
