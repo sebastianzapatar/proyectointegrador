@@ -36,19 +36,10 @@
   "type": "productos destacados"
  },
  {
-  "id": 668519,
-  "imagen": "firma.PNG",
-  "name": "erew",
-  "price": "4442",
-  "productos": "4242",
-  "image": "/img/imgHome/madre.jpg"
- },
- {
-  "id": 398215,
-  "imagen": "firma.PNG",
-  "name": "Seguimos en el intento",
-  "price": "134",
-  "productos": "3134",
-  "image": "/img/imgHome/madre.jpg"
+  "id": 430194,
+  "name": "Ryzen 9 5900",
+  "price": "1343",
+  "productos": "1",
+  "image": "/img/imgHome/pcfiles-1660081109815descarga (1).jfif"
  }
 ]

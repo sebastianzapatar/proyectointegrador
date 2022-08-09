@@ -4,7 +4,6 @@ const rutaAbsoluta='../views/';
 const productsFilePath = path.join(__dirname, '../src/data/productos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { dirname } = require('path');
-const productsRouter=require('../routes/productos');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 function getRandomInt(max) {
 	return Math.floor(Math.random() * max);
@@ -63,7 +62,7 @@ const controller = {
 			...req.body,
 			image: image
 		};
-		products.push(newProduct)
+		products.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 		res.redirect('/');
 	},
