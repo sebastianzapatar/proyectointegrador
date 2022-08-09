@@ -7,6 +7,8 @@ const fs = require('fs');
 const bp = require('body-parser');
 const productsRouter=require('./routes/productos');
 const methodOverride = require('method-override')
+const multer  = require('multer')
+const upload = multer({ dest: 'uploads/' })
 
 
 const rutaAbsoluta='./views/';

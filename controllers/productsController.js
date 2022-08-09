@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-
 const rutaAbsoluta='../views/';
 const productsFilePath = path.join(__dirname, '../src/data/productos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -53,12 +52,12 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 		let image;
-		
-		/*if(req.file[0] != undefined){
+		console.log(req.files);
+		if(req.files[0] != undefined){
 			image = '/img/imgHome/'+req.files[0].filename;
-		} else {*/
+		} else {
 			image = '/img/imgHome/madre.jpg'
-		//}
+		}
 		let newProduct = {
 			id: getRandomInt(1500000),
 			...req.body,
