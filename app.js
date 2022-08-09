@@ -6,7 +6,7 @@ const path=require('path');
 const fs = require('fs');
 const bp = require('body-parser');
 const productsRouter=require('./routes/productos');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
 
 
 const rutaAbsoluta='./views/';
