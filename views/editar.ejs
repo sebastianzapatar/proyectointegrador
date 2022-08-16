@@ -15,25 +15,32 @@
 <body>
     <%- include('./partials/header') %>
     <main class="registro">
-        <form method="POST" action="/productos/" enctype="multipart/form-data">
+        <form  method="POST" action="/productos/editar/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data">
+            <% if (productToEdit) { %>  
             <label>Imagen</label>
+            <img src="<%= productToEdit.image %>" alt="<%= productToEdit.name %>" width="200px"/>
             <input type="file" required placeholder="Edita la imagen del producto"
-                id="imagen"
-                name="imagen"/><br/>
+                id="files"
+                multiple
+                name="pcfiles"/><br/>
             <label>Descripcion</label>
             <input type="text" required placeholder="Ingrese el nombre del producto"
+            value="<%= productToEdit.name %>"
                  id="name"
                 name="name"/><br/>
             <label>Precio</label>
             <input type="number" required placeholder="Ingrese el precio del producto"
+            value="<%= productToEdit.price %>"
                 id="price"
                 name="price"/><br/>
             <label>Cantidad</label>
             <input type="number" required placeholder="Ingrese el número de productos"
+            value="5"
                 id="productos"
                 name="productos"/><br/>
             <button type="submit">Enviar</button>
             <button type="reset">Reestablecer  </button>
+            <% } %>
         </form>
     </main>
     <%- include('./partials/footer') %>

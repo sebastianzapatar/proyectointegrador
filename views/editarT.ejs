@@ -34,9 +34,7 @@
          <p class= "descripcionDelProducto"> <%= products.name %>
          <p class= "precio"><%= products.price %></p>
 
-         <form method="POST" action="/productos/borrar/<%- products.id %>?_method=DELETE">
-            <input type="hidden" name="_method" value="delete">
-           <button type="submit">
+          <p class="button"> <a href="/productos/editar/<%- products.id %>">editar producto</a> </p>
             <a
 
             class="btn-floating btn-small waves-effect waves-light red"

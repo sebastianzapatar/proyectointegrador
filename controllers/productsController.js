@@ -71,8 +71,18 @@ const controller = {
 	edit: (req, res) => {
 		let id = req.params.id
 		let productToEdit = products.find(product => product.id == id)
-		res.render('product-edit-form', {productToEdit})
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editar');
+		res.render(htmlPath, {productToEdit})
 	},
+	editar: (req, res) => {
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editarT');
+		
+		res.render(htmlPath, {
+			products,
+			toThousand
+		})
+	},
+
 	// Update - Method to update
 	update: (req, res) => {
 		let id = req.params.id;

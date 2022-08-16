@@ -14,10 +14,13 @@ const storage=multer.diskStorage({
 const upload=multer({storage:storage})
 router.get('/',productsController.index);
 router.get('/home',productsController.index);
-router.get('/productos/:id',productsController.detail);
+router.get('/productos/detail/:id',productsController.detail);
 router.get('/productos/',productsController.productos);
-router.get('/borrar/',productsController.borrar);
-router.delete('/productos/:id',productsController.destroy);
-router.get('/agregar',productsController.create);
+router.get('/productos/borrar/',productsController.borrar);
+router.delete('/productos/borrar/:id',productsController.destroy);
+router.get('/productos/agregar',productsController.create);
+router.put('/productos/editar/:id',upload.array('pcfiles'),productsController.store);
+router.get('/productos/editar/',productsController.editar);
 router.post('/productos',upload.array('pcfiles'),productsController.store);
+router.get('/productos/editar/:id',productsController.edit);
 module.exports=router;
