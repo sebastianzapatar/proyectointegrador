@@ -34,19 +34,5 @@
   "discount": 0,
   "image": "/img/imgHome/refri.jpg",
   "type": "productos destacados"
- },
- {
-  "id": 1068214,
-  "name": "a",
-  "price": "1",
-  "productos": "2",
-  "image": "/img/imgHome/pcfiles-1660603292554retro-estrella.png"
- },
- {
-  "id": 1283670,
-  "name": "b",
-  "price": "2",
-  "productos": "2",
-  "image": "/img/imgHome/pcfiles-1660603640780fotoCarnet.jpeg"
  }
 ]

@@ -101,7 +101,7 @@ const controller = {
 			image: image,
 		};
 		
-		let newProducts = products.map(product => {
+		let newProducts = products.map(product => { 
 			if (product.id == productToEdit.id) {
 				return product = {...productToEdit};
 			}
