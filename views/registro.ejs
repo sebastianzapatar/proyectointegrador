@@ -17,16 +17,27 @@
     <%- include('./partials/header') %>
 
     <main class="registro">
-        <form >
+            <form method="POST" action="/registro/agregar" enctype='multipart/form-data'>
+            <label>Imagen</label>
+            <input type="file" required placeholder="Suba la imagen del producto" id="files"
+            name="pcfiles" multiple/><br/>
             <label>Nombre</label>
-            <input type="text" required placeholder="Ingrese su nombre"/><br/>
+            <input type="text" required placeholder="Ingrese su nombre"  id="nombre"
+            name="nombre"/><br/>
             <label>Email</label>
-            <input type="text" required placeholder="Ingrese su email"/><br/>
+            <input type="email" required placeholder="Ingrese su email"  id="email"
+            name="email"/><br/>
             <label>Costraseña</label>
-            <input type="password" required placeholder="Ingrese su contreña"/> <br/>
+            <input type="password" required placeholder="Ingrese su contreña"  id="password"
+            name="password"/><br/>
             <label>Confirmar costraseña</label>
-            <input type="password" required placeholder="Confirme su contraseña"/> <br/>
-            <button type="button">Enviar</button>
+            <input type="password" required placeholder="Confirme su contraseña"  id="password2"
+            name="password2"/><br/>
+            <select name="categoria"  id="categoria"> 
+                <option value="1">administrador </option>
+                <option value="2">usuario</option>
+            </select>
+            <button type="submit">Enviar</button>
             <button type="reset">Reestablecer  </button>
         </form>
         <div class="imagen">

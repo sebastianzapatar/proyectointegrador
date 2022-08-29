@@ -9,6 +9,7 @@ const productsRouter=require('./routes/productos');
 const methodOverride = require('method-override')
 const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
+const usuariosRouter = require('./routes/usuarios')
 
 
 
@@ -19,11 +20,8 @@ app.set('view engine', 'ejs');
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
 app.use('/',productsRouter);
+app.use('/',usuariosRouter);
 
-app.get('/registro', (req, res)=>{
-    const htmlPath=path.resolve(__dirname,rutaAbsoluta+'registro');
-    res.render(htmlPath)
-});
 app.get('/carritodecompras', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'carrito');
     res.render(htmlPath)

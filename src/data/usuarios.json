@@ -1,36 +1,50 @@
-[{"id":1,
-"nombre":"Bautista",
-"apellido":"Cozzani",
-"email":"cozzanibautista@gmail.com",
-"contrasena":"1234",
-"categoria":1},
-
-{"id":2,
-"nombre":"Sebastian",
-"apellido":"Zapata",
-"email":"pansezapata@gmail.com",
-"contrasena":"1234",
-"categoria":1},
-
-{"id":3,
-"nombre":"Agustin",
-"apellido":"Valdera",
-"email":"valderitas3@gmail.com",
-"contrasena":"1234",
-"categoria":1},
-
-{"id":4,
-"nombre":"Andres",
-"apellido":"Tognetti",
-"email":"andresgilbert.tog@gmail.com",
-"contrasena":"1234",
-"categoria":2},
-
-{"id":5,
-"nombre":"Tomas",
-"apellido":"Salim",
-"email":"ttomassalim@gmail.com",
-"contrasena":"1234",
-"categoria":2}
+[
+ {
+  "id": 1,
+  "nombre": "Bautista",
+  "apellido": "Cozzani",
+  "email": "cozzanibautista@gmail.com",
+  "contrasena": "1234",
+  "categoria": 1
+ },
+ {
+  "id": 2,
+  "nombre": "Sebastian",
+  "apellido": "Zapata",
+  "email": "pansezapata@gmail.com",
+  "contrasena": "1234",
+  "categoria": 1
+ },
+ {
+  "id": 3,
+  "nombre": "Agustin",
+  "apellido": "Valdera",
+  "email": "valderitas3@gmail.com",
+  "contrasena": "1234",
+  "categoria": 1
+ },
+ {
+  "id": 4,
+  "nombre": "Andres",
+  "apellido": "Tognetti",
+  "email": "andresgilbert.tog@gmail.com",
+  "contrasena": "1234",
+  "categoria": 2
+ },
+ {
+  "id": 5,
+  "nombre": "Tomas",
+  "apellido": "Salim",
+  "email": "ttomassalim@gmail.com",
+  "contrasena": "1234",
+  "categoria": 2
+ },
+ {
+  "id": 630242,
+  "nombre": "a",
+  "email": "cozzanibautista@gmail.com",
+  "categoria": "2",
+  "password": "$2a$10$vyPP5qcqX0CD9UlJ6hKJ9.0mCN6wcO.ROF5XFVUidVjbBa.6l5vWu",
+  "image": "/img/imgRegistro/pcfiles-1661717217520fotoCarnet.jpeg"
+ }
 ]
-
