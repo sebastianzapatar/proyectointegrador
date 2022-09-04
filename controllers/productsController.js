@@ -11,10 +11,12 @@ function getRandomInt(max) {
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
+		console.log(req.session);
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
 		res.render(htmlPath, {
 			products,
-			toThousand
+			toThousand,
+			user:req.session.userLogged
 		})
 	},
 
@@ -25,19 +27,23 @@ const controller = {
 		let product = products.find(product => product.id == id)
 		res.render(htmlPath, {
 			product,
+			user:req.session.userLogged,
 			toThousand
 		})
 	},
 	productos: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		
-		res.render(htmlPath)
+		res.render(htmlPath,{
+			user:req.session.userLogged
+		})
 	},
 	borrar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'borrar');
 		
 		res.render(htmlPath, {
 			products,
+			user:req.session.userLogged,
 			toThousand
 		})
 	},
@@ -45,12 +51,15 @@ const controller = {
 	create: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
 		
-		res.render(htmlPath)
+		res.render(htmlPath,{
+			user:req.session.userLogged
+		})
 	},
 	
 	// Create -  Method to store
 	store: (req, res) => {
 		let image;
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		console.log(req.files);
 		if(req.files[0] != undefined){
 			image = '/img/imgHome/'+req.files[0].filename;
@@ -64,28 +73,34 @@ const controller = {
 		};
 		products.push(newProduct);
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-		res.redirect('/');
+		res.render(htmlPath,{
+			user:req.session.userLogged
+		})
 	},
 
 	// Update - Form to edit
 	edit: (req, res) => {
+		console.log(req.session)
 		let id = req.params.id
 		let productToEdit = products.find(product => product.id == id)
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editar');
-		res.render(htmlPath, {productToEdit})
+		res.render(htmlPath, {productToEdit,
+			user:req.session.userLogged})
 	},
 	editar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editarT');
 		
 		res.render(htmlPath, {
 			products,
-			toThousand
+			toThousand,
+			user:req.session.userLogged
 		})
 	},
 
 	// Update - Method to update
 	update: (req, res) => {
 		let id = req.params.id;
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		let productToEdit = products.find(product => product.id == id)
 		let image
 
@@ -109,15 +124,20 @@ const controller = {
 		})
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-		res.redirect('/');
+		res.render(htmlPath, {
+			user:req.session.userLogged
+		})
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		let id = req.params.id;
 		let finalProducts = products.filter(product => product.id != id);
 		fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-		res.redirect('/');
+		res.render(htmlPath, {
+			user:req.session.userLogged
+		})
 	},
 	
 };

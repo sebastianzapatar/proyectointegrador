@@ -337,6 +337,7 @@ background-size: cover;
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"]{
     font-size: 19px;
     width: 82%;
