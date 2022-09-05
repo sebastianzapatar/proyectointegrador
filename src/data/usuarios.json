@@ -11,32 +11,30 @@
   "id": 1431955,
   "nombre": "Sebastian",
   "email": "pansezapata@gmail.com",
-  "categoria": "1",
-  "password": "$2a$10$jw5Cu8lhufvkGEIi63TIAO61u4rxJs9z7XNELHVQs9jjecoGE0It2",
-  "image": "/img/imgRegistro/pcfiles-1662324492368336.pdf"
+
+ {
+  "id": 3,
+  "nombre": "Agustin",
+  "apellido": "Valdera",
+  "email": "valderitas3@gmail.com",
+  "contrasena": "1234",
+  "categoria": 1
  },
  {
-  "id": 685823,
-  "nombre": "sebastian",
-  "email": "xx@xx.com",
-  "categoria": "1",
-  "password": "$2a$10$peWk0QtoZBzcmskWaZGPTOOemxg7.0kiIeTY2b2R4kyRb2miysYzC",
-  "image": "/img/imgRegistro/pcfiles-1662406807430wr.java"
+  "id": 4,
+  "nombre": "Andres",
+  "apellido": "Tognetti",
+  "email": "andresgilbert.tog@gmail.com",
+  "contrasena": "1234",
+  "categoria": 2
  },
  {
-  "id": 147344,
-  "nombre": "xx@xx.com",
-  "email": "d@c.c",
-  "categoria": "1",
-  "password": "$2a$10$PytDoElIiBb9wTWgh2DJweczXgZn37pTYULjC7KzxUbfZJUT2eGZS",
-  "image": "/img/imgRegistro/pcfiles-1662406948946wr.java"
- },
- {
-  "id": 103549,
-  "nombre": "otro",
-  "email": "juan@juan.edu.cpo",
-  "categoria": "1",
-  "password": "$2a$10$hWFbvsGO/3MtXSbTpPiRMe1Da.wZUFXaSrTMG0HXmvErtp/4rlJmi",
-  "image": "/img/imgRegistro/pcfiles-1662407028744wr.java"
+  "id": 5,
+  "nombre": "Tomas",
+  "apellido": "Salim",
+  "email": "ttomassalim@gmail.com",
+  "contrasena": "1234",
+  "categoria": 2
+
  }
 ]

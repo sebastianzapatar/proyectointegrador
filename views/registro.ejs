@@ -17,26 +17,23 @@
     <%- include('./partials/header') %>
 
     <main class="registro">
-            <form method="POST" action="/registro/agregar" enctype='multipart/form-data'>
-            <label>Imagen</label>
-            <input type="file" required placeholder="Suba la imagen del producto" id="files"
+            <form method="POST" action="/registro/agregar" enctype='multipart/form-data' id="formMain">
+            <label for="">Adjunte su imagen de perfil</label>
+            <input type="file" required placeholder="Adjunte su imagen" id="files"
             name="pcfiles" multiple/><br/>
-            <label>Nombre</label>
-            <input type="text" required placeholder="Ingrese su nombre"  id="nombre"
+            <input type="pattern" minlength ="5" maxlength ="20" required placeholder="Ingrese su nombre completo" pattern="[A-Za-z]+" id="nombre"
             name="nombre"/><br/>
-            <label>Email</label>
-            <input type="email" required placeholder="Ingrese su email"  id="email"
+            <input type="email" required placeholder="Ingrese su email" id="email"
             name="email"/><br/>
-            <label>Costraseña</label>
-            <input type="password" required placeholder="Ingrese su contreña"  id="password"
+            <input type="password" required placeholder="Ingrese su contreña" id="password"
             name="password"/><br/>
-            <label>Confirmar costraseña</label>
-            <input type="password" required placeholder="Confirme su contraseña"  id="password2"
+            <input type="password" required placeholder="Confirme su contraseña" id="password2"
             name="password2"/><br/>
-            <select name="categoria"  id="categoria"> 
+            <p id="err" class="text-danger"> </p>
+            <select name="categoria"  id="categoria">
                 <option value="1">administrador </option>
                 <option value="2">usuario</option>
-            </select>
+            </select> <br>
             <button type="submit">Enviar</button>
             <button type="reset">Reestablecer  </button>
         </form>
@@ -45,8 +42,17 @@
             width="300px"/>
         </div>
     </main>
-    
-    <%- include('./partials/footer') %>
 
+    <%- include('./partials/footer') %>
+<script> formMain.addEventListener("submit", (e) => { // Escuchar cuando se envíe el formulario
+    if (password.value !== password2.value) { // Comprobar si los valores de los inputs son iguales, si no lo son continuar
+      e.preventDefault(); // Prevenir que la página se recargue
+      err.innerHTML = "Las contraseñas no coinciden"; // Notificar al usuario
+      setTimeout(() => {
+        err.innerHTML = " ";
+      }, 120000); // Esperar 1.2 segundos y quitar el mensaje
+    }
+  });</script>
 </body>
 </html>
+
