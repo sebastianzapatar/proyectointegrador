@@ -13,5 +13,7 @@ const storage=multer.diskStorage({
 })
 const upload=multer({storage:storage})
 router.get('/registro/agregar',usuariosController.create);
+router.get('/registro/login',usuariosController.loggin);
 router.post('/registro/agregar',upload.array('pcfiles'),usuariosController.store);
+router.post('/registro/login',usuariosController.login);
 module.exports=router;

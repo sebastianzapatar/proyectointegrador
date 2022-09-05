@@ -1,50 +1,18 @@
 [
  {
-  "id": 1,
-  "nombre": "Bautista",
-  "apellido": "Cozzani",
-  "email": "cozzanibautista@gmail.com",
-  "contrasena": "1234",
-  "categoria": 1
+  "id": 1298,
+  "nombre": "ee",
+  "email": "sza@er",
+  "categoria": "1",
+  "password": "$2a$10$xeScP6/QRg3gh/MyvNoKhOJ.39rXq8bvgfsUw21bhpJUw.5hX2iTS",
+  "image": "/img/imgRegistro/pcfiles-1661888159500Parcial_Fundamentos_de_Programacion.pdf"
  },
  {
-  "id": 2,
+  "id": 1431955,
   "nombre": "Sebastian",
-  "apellido": "Zapata",
   "email": "pansezapata@gmail.com",
-  "contrasena": "1234",
-  "categoria": 1
- },
- {
-  "id": 3,
-  "nombre": "Agustin",
-  "apellido": "Valdera",
-  "email": "valderitas3@gmail.com",
-  "contrasena": "1234",
-  "categoria": 1
- },
- {
-  "id": 4,
-  "nombre": "Andres",
-  "apellido": "Tognetti",
-  "email": "andresgilbert.tog@gmail.com",
-  "contrasena": "1234",
-  "categoria": 2
- },
- {
-  "id": 5,
-  "nombre": "Tomas",
-  "apellido": "Salim",
-  "email": "ttomassalim@gmail.com",
-  "contrasena": "1234",
-  "categoria": 2
- },
- {
-  "id": 630242,
-  "nombre": "a",
-  "email": "cozzanibautista@gmail.com",
-  "categoria": "2",
-  "password": "$2a$10$vyPP5qcqX0CD9UlJ6hKJ9.0mCN6wcO.ROF5XFVUidVjbBa.6l5vWu",
-  "image": "/img/imgRegistro/pcfiles-1661717217520fotoCarnet.jpeg"
+  "categoria": "1",
+  "password": "$2a$10$jw5Cu8lhufvkGEIi63TIAO61u4rxJs9z7XNELHVQs9jjecoGE0It2",
+  "image": "/img/imgRegistro/pcfiles-1662324492368336.pdf"
  }
 ]
