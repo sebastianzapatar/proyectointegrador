@@ -11,12 +11,17 @@ const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const usuariosRouter = require('./routes/usuarios')
 
-
+const session = require('express-session');
 
 const rutaAbsoluta='./views/';
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+  }))
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
 app.use('/',productsRouter);
@@ -24,15 +29,22 @@ app.use('/',usuariosRouter);
 
 app.get('/carritodecompras', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'carrito');
-    res.render(htmlPath)
+    res.render(htmlPath,{
+        user:req.session.usserLogged
+    })
 });
 app.get('/login', (req, res)=>{
+    console.log(req.session);
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'login');
-    res.render(htmlPath)
+    res.render(htmlPath,{
+        user:req.session.usserLogged
+    })
 });
 
 app.get('/ayuda', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'ayuda');
-    res.render(htmlPath)
+    res.render(htmlPath,{
+        user:req.session.usserLogged
+    })
 });
 app.listen(port, ()=>console.log("funcionando en localhost:"+port));

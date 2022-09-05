@@ -1,16 +1,15 @@
 [
  {
-  "id": 1,
-  "nombre": "Bautista",
-  "apellido": "Cozzani",
-  "email": "cozzanibautista@gmail.com",
-  "contrasena": "1234",
-  "categoria": 1
+  "id": 1298,
+  "nombre": "ee",
+  "email": "sza@er",
+  "categoria": "1",
+  "password": "$2a$10$xeScP6/QRg3gh/MyvNoKhOJ.39rXq8bvgfsUw21bhpJUw.5hX2iTS",
+  "image": "/img/imgRegistro/pcfiles-1661888159500Parcial_Fundamentos_de_Programacion.pdf"
  },
  {
-  "id": 2,
+  "id": 1431955,
   "nombre": "Sebastian",
-  "apellido": "Zapata",
   "email": "pansezapata@gmail.com",
   "contrasena": "1234",
   "categoria": 1
@@ -109,6 +108,9 @@
   "email": "cozzanibautista@gmail.com",
   "categoria": "1",
   "password": "$2a$10$R7DcsjHDXwCgcKkBCPV4/eyXx59GC/9srvsh1YCGklWJlXt8wO.G.",
-  "image": "/img/imgRegistro/pcfiles-1661902985117fotoCarnet.jpeg"
+  "image": "/img/imgRegistro/pcfiles-1661902985117fotoCarnet.jpeg",
+  "categoria": "1",
+  "password": "$2a$10$jw5Cu8lhufvkGEIi63TIAO61u4rxJs9z7XNELHVQs9jjecoGE0It2",
+  "image": "/img/imgRegistro/pcfiles-1662324492368336.pdf"
  }
 ]
