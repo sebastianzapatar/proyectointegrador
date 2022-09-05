@@ -40,11 +40,75 @@
   "categoria": 2
  },
  {
-  "id": 630242,
-  "nombre": "a",
+  "id": 1121325,
+  "nombre": "sssssss",
   "email": "cozzanibautista@gmail.com",
-  "categoria": "2",
-  "password": "$2a$10$vyPP5qcqX0CD9UlJ6hKJ9.0mCN6wcO.ROF5XFVUidVjbBa.6l5vWu",
-  "image": "/img/imgRegistro/pcfiles-1661717217520fotoCarnet.jpeg"
+  "categoria": "1",
+  "password": "1",
+  "image": "/img/imgRegistro/pcfiles-1661901427357fotoCarnet.jpeg"
+ },
+ {
+  "id": 548334,
+  "nombre": "bautista",
+  "email": "cozzanibautista@gmail.com",
+  "categoria": "1",
+  "password": "d",
+  "image": "/img/imgRegistro/pcfiles-1661901556843fotoCarnet.jpeg"
+ },
+ {
+  "id": 1366827,
+  "nombre": "''@@`1`%^",
+  "email": "cozzanibautista@gmail.com",
+  "categoria": "1",
+  "password": "d",
+  "image": "/img/imgRegistro/pcfiles-1661901688170fotoCarnet.jpeg"
+ },
+ {
+  "id": 654084,
+  "nombre": "333333",
+  "email": "cozzanibautista@gmail.com",
+  "categoria": "1",
+  "password": "d",
+  "image": "/img/imgRegistro/pcfiles-1661901762870fotoCarnet.jpeg"
+ },
+ {
+  "id": 1308157,
+  "nombre": "bautista",
+  "email": "cozzanibautista@gmail.com",
+  "categoria": "1",
+  "password": "d",
+  "image": "/img/imgRegistro/pcfiles-1661902353925fotoCarnet.jpeg"
+ },
+ {
+  "id": 935382,
+  "nombre": "bautista",
+  "email": "cozzanibautista@gmail.com",
+  "categoria": "1",
+  "password": "d",
+  "image": "/img/imgRegistro/pcfiles-1661902701828fotoCarnet.jpeg"
+ },
+ {
+  "id": 1276527,
+  "nombre": "bautista",
+  "email": "cozzanibautista@gmail.com",
+  "categoria": "1",
+  "password": "d",
+  "image": "/img/imgRegistro/pcfiles-1661902720329fotoCarnet.jpeg"
+ },
+ {
+  "id": 1402969,
+  "nombre": "bautista",
+  "email": "cozzanibautista@gmail.com",
+  "categoria": "1",
+  "password": "$2a$10$e.5vw.zkYEAPRXvcPsVO1uAapnVHxZ8bnhlhzfB4hyTSli9a50zzm",
+  "image": "/img/imgRegistro/pcfiles-1661902836407fotoCarnet.jpeg"
+ },
+ {
+  "id": 307812,
+  "nombre": "bautista",
+  "email": "cozzanibautista@gmail.com",
+  "categoria": "1",
+  "password": "$2a$10$R7DcsjHDXwCgcKkBCPV4/eyXx59GC/9srvsh1YCGklWJlXt8wO.G.",
+  "image": "/img/imgRegistro/pcfiles-1661902985117fotoCarnet.jpeg"
  }
 ]
