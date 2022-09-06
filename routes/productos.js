@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const productsController=require('../controllers/productsController');
+const authMiddleware = require('../Middlewares/authMiddleware');
+const validateMiddleware = require('../Middlewares/validateMiddleware');
 
 const multer=require('multer');
 const storage=multer.diskStorage({
@@ -18,7 +20,7 @@ router.get('/productos/detail/:id',productsController.detail);
 router.get('/productos/',productsController.productos);
 router.get('/productos/borrar/',productsController.borrar);
 router.delete('/productos/borrar/:id',productsController.destroy);
-router.get('/productos/agregar',productsController.create);
+router.get('/productos/agregar', productsController.create);
 router.put('/productos/editar/:id',upload.array('pcfiles'),productsController.store);
 router.get('/productos/editar/',productsController.editar);
 router.post('/productos',upload.array('pcfiles'),productsController.store);

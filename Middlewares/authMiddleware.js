@@ -1,11 +1,9 @@
 //Usuarios no logueados, redirreciona a '/login'
 
 function authMiddleware (res, req, next) {
-    if (!req.session.userLogged ) {
+    if (!user) {
         return res.redirect ('/login')
     } 
-    next ()
+    next()
 }
-
-
 module.exports = authMiddleware
