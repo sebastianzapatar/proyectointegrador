@@ -20,14 +20,14 @@ const controller = {
 	create: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'registro');
 		res.render(htmlPath,{
-			user:req.session.userLogged
+			user: req.session.userLogged
 		})
 	},
 	loggin: (req, res)=>{
 		console.log(req.session);
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'login');
 		res.render(htmlPath,{
-			user:req.session.userLogged
+			user: req.session.userLogged
 		})
 	},
 	// Create -  Method to store

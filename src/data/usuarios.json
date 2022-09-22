@@ -1,18 +1,10 @@
 [
  {
-  "id": 192750,
+  "id": 22478,
   "nombre": "bautista",
   "email": "cozzanibautista@gmail.com",
   "categoria": "1",
-  "password": "$2a$10$bhwyG9JNJ3kddZ1rcamQnOyWUCZJnVZt5M8mD3p5N7xyHsU2mHOGy",
-  "image": "/img/imgRegistro/pcfiles-1662424057133fotoCarnet.jpeg"
- },
- {
-  "id": 997972,
-  "nombre": "aaaaaaa",
-  "email": "bauticozzani03@gmal.com",
-  "categoria": "1",
-  "password": "$2a$10$V9nLnxhdmJVjukKg/uXBB.lWaMfhwgim9zOOT0LGRedE1PrpQBXKK",
-  "image": "/img/imgRegistro/pcfiles-1662424124702fotoCarnet.jpeg"
+  "password": "$2a$10$H/IvlKugzFxGUiqxpfaV3.8/39eBGKAt0LljQ8ef4dnJh7FBO.Bhq",
+  "image": "/img/imgRegistro/pcfiles-1663260123020fotoCarnet.jpeg"
  }
 ]

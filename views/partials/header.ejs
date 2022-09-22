@@ -3,10 +3,10 @@
     <a href="/home" class="logo"><img src="/img/imgGeneral/logo.png" alt="logo" width="200px"></a>    
     <input type="text" placeholder="Buscador" maxlength="40"> 
     <i href="#" class="fa-solid fa-cart-shopping"></i>
-    <% if(user) { %>
-        <h2><%= user.nombre%></h2>
+    <% if(locals.userLogged) { %>
+        <h2><%= locals.userLogged.nombre%></h2>
     <% } %>
-    <% if(user == null) { %>
+    <% if(locals.userLogged == null) { %>
     <a href="/login"><h2>INICIAR SESION</h2></a>
     <% } %>
     </div>
