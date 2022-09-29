@@ -21,6 +21,8 @@ router.get('/productos/',productsController.productos);
 router.get('/productos/borrar/',productsController.borrar);
 router.delete('/productos/borrar/:id',productsController.destroy);
 router.get('/productos/agregar', productsController.create);
+router.get('/productos/agregarDb', productsController.createDb);
+
 router.put('/productos/editar/:id',upload.array('pcfiles'),productsController.store);
 router.get('/productos/editar/',productsController.editar);
 router.post('/productos',upload.array('pcfiles'),productsController.store);

@@ -34,7 +34,7 @@ const controller = {
 	store: (req, res) => {
 		let image;
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'registro');
-		
+		const htmlPath2=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		console.log('hola');
 		console.log(req.body);
 		if(req.files[0] != undefined){
@@ -54,7 +54,7 @@ const controller = {
 			};
 			usuarios.push(newUsers);
 			fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, ' '));
-			res.render(htmlPath,{
+			res.render(htmlPath2,{
 				user:req.session.userLogged
 			})
 		}
