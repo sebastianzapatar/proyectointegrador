@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const usuariosController=require('../controllers/usuariosController');
+const validateMiddleware = require ('../Middlewares/validateMiddleware')
 
 const multer=require('multer');
 const storage=multer.diskStorage({
