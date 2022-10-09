@@ -5,6 +5,7 @@ const productsFilePath = path.join(__dirname, '../src/data/productos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { dirname } = require('path');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+let Productos = require('../database/models/Productos');
 function getRandomInt(max) {
 	return Math.floor(Math.random() * max);
   }
@@ -139,6 +140,19 @@ const controller = {
 			user:req.session.userLogged
 		})
 	},
-	
+	createDb: function (req, res) {
+        Productos.create({
+			idProducts: req.body.idProducts,
+			name: req.body.name,
+			description: req.body.description,
+			image: req.body.image,
+			price: req.body.price, 
+			idCategoria: req.body.idCategoria
+        })
+    .then(()=>{
+       return res.redirect('/productos')
+    })
+    .catch(error => res.send(error))
+	}
 };
 module.exports = controller;
