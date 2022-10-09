@@ -1,5 +1,5 @@
 module.exports=(sequelize,DataTypes)=>{
-    const Rols=sequelize.define("rols",
+    const Rol=sequelize.define("rols",
     {
         idRol:{
             autoIncrement:true,
