@@ -141,20 +141,21 @@ const controller = {
 		})
 	},
 	
-	createDb: function (req, res) {
-        Productos.create({
-			idProducts: req.body.idProducts,
-			name: req.body.name,
-			description: req.body.description,
-			image: req.body.image,
-			price: req.body.price, 
-			idCategoria: req.body.idCategoria
-        })
-    .then(()=>{
-       return res.redirect('/productos')
-    })
-    .catch(error => res.send(error))
+// 	createDb: function (req, res) {
+//         Productos.create({
+// 			idProducts: req.body.idProducts,
+// 			name: req.body.name,
+// 			description: req.body.description,
+// 			image: req.body.image,
+// 			price: req.body.price, 
+// 			idCategoria: req.body.idCategoria
+//         })
+//     .then(()=>{
+//        return res.redirect('/productos')
+//     })
+//     .catch(error => res.send(error))
    
-}}
+// }
+}
 
 module.exports = controller;
