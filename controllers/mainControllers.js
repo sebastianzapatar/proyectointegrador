@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+let db = require('../database/models');
+
 const productsFilePath = path.join(__dirname, '../data/productos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -14,11 +16,16 @@ const inSale = products.filter(function(product){
 })
 const controller = {
 	index: (req, res) => {
-		res.render('index', {
-			visited,
-			inSale,
-			toThousand
-		});
+		db.Productos.findAll()
+    .then((productos)=>{
+       return res.send(productos)
+    })
+    .catch(error => res.send(error))
+		// res.render('index', {
+		// 	visited,
+		// 	inSale,
+		// 	toThousand
+		// });
 	},
 	search: (req, res) => {
 		let search = req.query.keywords;

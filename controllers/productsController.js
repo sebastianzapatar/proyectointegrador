@@ -12,13 +12,17 @@ function getRandomInt(max) {
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		console.log(req.session);
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
-		res.render(htmlPath, {
-			products,
-			toThousand,
-			user:req.session.userLogged
+		db.products.findAll()
+		.then((productos)=>{
+		   return res.send(productos)
 		})
+		// console.log(req.session);
+		// const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
+		// res.render(htmlPath, {
+		// 	products,
+		// 	toThousand,
+		// 	user:req.session.userLogged
+		// })
 	},
 
 	// Detail - Detail from one product
@@ -141,21 +145,22 @@ const controller = {
 		})
 	},
 	
-// 	createDb: function (req, res) {
-//         Productos.create({
-// 			idProducts: req.body.idProducts,
-// 			name: req.body.name,
-// 			description: req.body.description,
-// 			image: req.body.image,
-// 			price: req.body.price, 
-// 			idCategoria: req.body.idCategoria
-//         })
-//     .then(()=>{
-//        return res.redirect('/productos')
-//     })
-//     .catch(error => res.send(error))
+	createDb: function (req, res) {
+        // Productos.create({
+		// 	idProducts: req.body.idProducts,
+		// 	name: req.body.name,
+		// 	description: req.body.description,
+		// 	image: req.body.image,
+		// 	price: req.body.price, 
+		// 	idCategoria: req.body.idCategoria
+        // })
+		Productos.findAll()
+    .then((productos)=>{
+       return res.send(productos)
+    })
+    .catch(error => res.send(error))
    
-// }
+}
 }
 
 module.exports = controller;

@@ -17,7 +17,7 @@ module.exports=(sequelize,DataTypes)=>{
     }
     );
     Rol.associate=function(models){
-        Rol.hasMany(models.Usuarios,{
+        Rol.hasMany(models.users,{
             as:"users",
             foreingKey:"idUsers"
         })

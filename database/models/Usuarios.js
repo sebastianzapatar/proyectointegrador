@@ -29,7 +29,7 @@ module.exports=(sequelize,DataTypes)=>{
     }
     );
     Usuarios.associate=function(models){
-        Usuarios.belongsTo(models.Rols,{
+        Usuarios.belongsTo(models.rols,{
             as:"rols",
             foreingKey:"idUsers"
         })

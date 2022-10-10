@@ -18,7 +18,7 @@ module.exports=(sequelize,DataTypes)=>{
         price:{
             type:DataTypes.DECIMAL
         },
-        idCategoria:{
+        categorieId:{
             type: DataTypes.INTEGER
         }
     }
@@ -28,12 +28,12 @@ module.exports=(sequelize,DataTypes)=>{
         timestamps:false
     }
     );
-    Productos.associate=function(models){
-        Usuarios.belongsTo(models.Usuarios,{
-            as:"categories",
-            foreingKey:"idCategoria"
-        })
-    }
+    // Productos.associate=function(models){
+    //     Productos.belongsTo(models.users,{
+    //         as:"categories",
+    //         foreingKey:"idCategoria"
+    //     })
+    // }
     return Productos;
 }
 
