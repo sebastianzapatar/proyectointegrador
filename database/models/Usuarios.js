@@ -1,7 +1,7 @@
 module.exports=(sequelize,DataTypes)=>{
     const Usuarios=sequelize.define("users",
     {
-        idUsers:{
+        idUser:{
             autoIncrement:true,
             primaryKey:true,
             type: DataTypes.INTEGER
@@ -18,7 +18,7 @@ module.exports=(sequelize,DataTypes)=>{
         password:{
             type:DataTypes.STRING
         },
-        idRol:{
+        rolId:{
             type: DataTypes.INTEGER
         }
     }
@@ -31,7 +31,7 @@ module.exports=(sequelize,DataTypes)=>{
     Usuarios.associate=function(models){
         Usuarios.belongsTo(models.rols,{
             as:"rols",
-            foreingKey:"idUsers"
+            foreignKey:"rolId"
         })
     }
     return Usuarios;

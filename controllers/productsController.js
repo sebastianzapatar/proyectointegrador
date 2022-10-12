@@ -12,17 +12,13 @@ function getRandomInt(max) {
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		db.products.findAll()
-		.then((productos)=>{
-		   return res.send(productos)
+		console.log(req.session);
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
+		res.render(htmlPath, {
+			products,
+			toThousand,
+			user:req.session.userLogged
 		})
-		// console.log(req.session);
-		// const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
-		// res.render(htmlPath, {
-		// 	products,
-		// 	toThousand,
-		// 	user:req.session.userLogged
-		// })
 	},
 
 	// Detail - Detail from one product

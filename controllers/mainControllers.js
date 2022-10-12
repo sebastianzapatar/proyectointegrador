@@ -16,16 +16,11 @@ const inSale = products.filter(function(product){
 })
 const controller = {
 	index: (req, res) => {
-		db.Productos.findAll()
-    .then((productos)=>{
-       return res.send(productos)
-    })
-    .catch(error => res.send(error))
-		// res.render('index', {
-		// 	visited,
-		// 	inSale,
-		// 	toThousand
-		// });
+		res.render('index', {
+			visited,
+			inSale,
+			toThousand
+		});
 	},
 	search: (req, res) => {
 		let search = req.query.keywords;
