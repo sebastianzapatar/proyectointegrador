@@ -20,11 +20,12 @@ router.get('/productos/detail/:id',productsController.detail);
 router.get('/productos/',productsController.productos);
 router.get('/productos/borrar/',productsController.borrar);
 router.delete('/productos/borrar/:id',productsController.destroy);
-router.get('/productos/agregar', productsController.create);
 router.get('/productos/agregarDb', productsController.createDb);
+router.post('/productos/agregarDb',upload.array('pcfiles'),productsController.processcreateDb);
 
-router.put('/productos/editar/:id',upload.array('pcfiles'),productsController.store);
+router.put('/productos/editar/:id',upload.array('pcfiles'),productsController.processCreate);
 router.get('/productos/editar/',productsController.editar);
-router.post('/productos',upload.array('pcfiles'),productsController.store);
+router.get('/productos/agregar', productsController.create);
+router.post('/productos',upload.array('pcfiles'),productsController.processCreate);
 router.get('/productos/editar/:id',productsController.edit);
 module.exports=router;

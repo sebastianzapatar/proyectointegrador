@@ -33,11 +33,18 @@ const controller = {
 		})
 	},
 	productos: (req, res) => {
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
+		// const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		
-		res.render(htmlPath,{
-			user:req.session.userLogged
-		})
+		// res.render(htmlPath,{
+		// 	user:req.session.userLogged
+		// })
+		db.products.findAll({
+			include: ['categories']
+        })
+		.then((productos)=>{
+			return res.send(productos)
+		 })
+		 .catch(error => res.send(error))
 	},
 	borrar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'borrar');
@@ -58,7 +65,7 @@ const controller = {
 	},
 	
 	// Create -  Method to store
-	store: (req, res) => {
+	processCreate: (req, res) => {
 		let image;
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		console.log(req.files);
@@ -141,22 +148,26 @@ const controller = {
 		})
 	},
 	
-	createDb: function (req, res) {
-        // Productos.create({
-		// 	idProducts: req.body.idProducts,
-		// 	name: req.body.name,
-		// 	description: req.body.description,
-		// 	image: req.body.image,
-		// 	price: req.body.price, 
-		// 	idCategoria: req.body.idCategoria
-        // })
-		Productos.findAll()
-    .then((productos)=>{
-       return res.send(productos)
-    })
-    .catch(error => res.send(error))
-   
-}
-}
 
+	processcreateDb: function (req, res) {
+        db.products.create({
+			name: req.body.name,
+			description: req.body.description,
+			image: 'auris.jpg',
+			price: req.body.price, 
+			categorieId: req.body.idCategoria
+        })
+    .then((productos)=>{
+       return res.redirect('/productos')
+    })
+    .catch(error => res.send(error)) 
+},
+    createDb: (req, res) => {
+	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregarDb');
+	
+	res.render(htmlPath,{
+		user:req.session.userLogged
+	})
+},
+}
 module.exports = controller;
