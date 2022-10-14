@@ -10,18 +10,7 @@ function getRandomInt(max) {
 	return Math.floor(Math.random() * max);
   }
 const controller = {
-	// Root - Show all products
-	index: (req, res) => {
-		console.log(req.session);
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
-		res.render(htmlPath, {
-			products,
-			toThousand,
-			user:req.session.userLogged
-		})
-	},
-
-	// Detail - Detail from one product
+     // Detail - Detail from one product
 	detail: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
 		let id = req.params.id;

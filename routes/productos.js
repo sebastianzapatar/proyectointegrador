@@ -4,6 +4,7 @@ const productsController=require('../controllers/productsController');
 const authMiddleware = require('../Middlewares/authMiddleware');
 const validateMiddleware = require('../Middlewares/validateMiddleware');
 
+
 const multer=require('multer');
 const storage=multer.diskStorage({
     destination:function(req,file,cb){
@@ -14,8 +15,6 @@ const storage=multer.diskStorage({
     }
 })
 const upload=multer({storage:storage})
-router.get('/',productsController.index);
-router.get('/home',productsController.index);
 router.get('/productos/detail/:id',productsController.detail);
 router.get('/productos/',productsController.productos);
 router.get('/productos/borrar/',productsController.borrar);
