@@ -22,11 +22,6 @@ const controller = {
 		})
 	},
 	productos: (req, res) => {
-		// const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
-		
-		// res.render(htmlPath,{
-		// 	user:req.session.userLogged
-		// })
 		db.products.findAll({
 			include: ['categories']
         })
