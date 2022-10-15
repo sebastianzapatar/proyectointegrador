@@ -36,6 +36,7 @@
   "type": "productos destacados"
  },
  {
+<<<<<<< HEAD
   "id": 236656,
   "productos": [
    "3",
@@ -44,5 +45,32 @@
   "name": "nombre",
   "price": "3",
   "image": "/img/imgHome/pcfiles-1665327653683el-hombre-arana-lanzando-telarana_3840x2160_xtrafondos.com.jpg"
+=======
+  "id": 202152,
+  "name": "hola",
+  "price": "123",
+  "productos": "1",
+  "image": "/img/imgHome/pcfiles-1665598536870fotoCarnet.jpeg"
+ },
+ {
+  "id": 382467,
+  "productos": [
+   "1",
+   "1"
+  ],
+  "name": "hola",
+  "price": "123",
+  "image": "/img/imgHome/pcfiles-1665599200578fotoCarnet.jpeg"
+ },
+ {
+  "id": 550514,
+  "productos": [
+   "1",
+   "1"
+  ],
+  "name": "hola",
+  "price": "123",
+  "image": "/img/imgHome/pcfiles-1665599242723fotoCarnet.jpeg"
+>>>>>>> e45f29121020a9e8b144f6eba117f33e7b12369f
  }
 ]
