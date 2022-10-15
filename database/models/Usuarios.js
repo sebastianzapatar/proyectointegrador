@@ -28,12 +28,12 @@ module.exports=(sequelize,DataTypes)=>{
         timestamps:false
     }
     );
-    Usuarios.associate=function(models){
+    /*Usuarios.associate=function(models){
         Usuarios.belongsTo(models.Rols,{
             as:"rols",
             foreingKey:"idUsers"
         })
-    }
+    }*/
     return Usuarios;
 }
 

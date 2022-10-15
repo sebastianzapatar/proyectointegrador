@@ -16,12 +16,12 @@ module.exports=(sequelize,DataTypes)=>{
         timestamps:false
     }
     );
-    Categoria.associate=function(models){
+    /*Categoria.associate=function(models){
         Categoria.hasMany(models.Productos,{
             as:"products",
             foreingKey:"idProducts"
         })
-    }
+    }*/
     return Categoria;
 }
 

@@ -34,5 +34,15 @@
   "discount": 0,
   "image": "/img/imgHome/refri.jpg",
   "type": "productos destacados"
+ },
+ {
+  "id": 236656,
+  "productos": [
+   "3",
+   "43"
+  ],
+  "name": "nombre",
+  "price": "3",
+  "image": "/img/imgHome/pcfiles-1665327653683el-hombre-arana-lanzando-telarana_3840x2160_xtrafondos.com.jpg"
  }
 ]

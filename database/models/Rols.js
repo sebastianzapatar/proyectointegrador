@@ -16,12 +16,12 @@ module.exports=(sequelize,DataTypes)=>{
         timestamps:false
     }
     );
-    Rol.associate=function(models){
+    /*Rol.associate=function(models){
         Rol.hasMany(models.Usuarios,{
             as:"users",
             foreingKey:"idUsers"
         })
-    }
+    }*/
     return Rol;
 }
 

@@ -15,11 +15,11 @@
 <body>
     <%- include('./partials/header') %>
     <main class="registro">
-        <form method="POST" action="/productos/" enctype='multipart/form-data'>
+        <form method="POST" action="/productos/agregarDb" enctype='multipart/form-data'>
             <label>idProducts</label>
             <input type="number" required placeholder="Coloque el ID del producto"
-                name="productos"
-               id="productos"
+                name="idProducts"
+               id="idProducts"
                multiple/><br/>
             <label>name</label>
             <input type="text" required placeholder="Ingrese el nombre del producto"
@@ -27,8 +27,8 @@
                 name="name"/><br/>
             <label>Imagen</label>
             <input type="file" required placeholder="Ingrese el precio del producto"
-                id="files"
-                name="pcfiles"/><br/> 
+                id="image"
+                name="image"/><br/> 
             <label>Precio</label>
             <input type="number" required placeholder="Ingrese el precio del producto"
                 id="price"

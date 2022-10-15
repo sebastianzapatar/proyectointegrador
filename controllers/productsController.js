@@ -50,7 +50,7 @@ const controller = {
 	},
 	// Create - Form to create
 	create: (req, res) => {
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregarDb');
 		
 		res.render(htmlPath,{
 			user:req.session.userLogged
@@ -142,13 +142,14 @@ const controller = {
 	},
 	
 	createDb: function (req, res) {
-        Productos.create({
-			idProducts: req.body.idProducts,
-			name: req.body.name,
-			description: req.body.description,
-			image: req.body.image,
-			price: req.body.price, 
-			idCategoria: req.body.idCategoria
+		console.log(req.body);
+        db.Productos.create({
+			idProducts: 1,
+			name: "producto",
+			description: "seguimos",
+			image: "imagen.jpg",
+			price: 10, 
+			idCategoria: "categoria"
         })
     .then(()=>{
        return res.redirect('/productos')

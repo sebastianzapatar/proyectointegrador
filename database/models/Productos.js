@@ -1,25 +1,26 @@
-module.exports=(sequelize,DataTypes)=>{
+
+module.exports=(sequelize,dataTypes)=>{
     const Productos=sequelize.define("products",
     {
         idProducts:{
             autoIncrement:true,
             primaryKey:true,
-            type: DataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
         name:{
-            type:DataTypes.STRING
+            type:dataTypes.STRING
         },
         description:{
-            type:DataTypes.STRING
+            type:dataTypes.STRING
         },
         image:{
-            type:DataTypes.STRING
+            type:dataTypes.STRING
         },
         price:{
-            type:DataTypes.DECIMAL
+            type:dataTypes.DECIMAL
         },
         idCategoria:{
-            type: DataTypes.INTEGER
+            type: dataTypes.INTEGER
         }
     }
     ,
@@ -28,12 +29,13 @@ module.exports=(sequelize,DataTypes)=>{
         timestamps:false
     }
     );
-    Productos.associate=function(models){
+    
+   /* Productos.associate=function(models){
         Usuarios.belongsTo(models.Usuarios,{
             as:"categories",
             foreingKey:"idCategoria"
         })
-    }
+    }*/
     return Productos;
 }
 
