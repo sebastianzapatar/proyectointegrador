@@ -11,6 +11,7 @@ const multer  = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const usuariosRouter = require('./routes/usuarios')
 const localUserCheck = require('./Middlewares/localUserCheck.js')
+const mainRouter = require('./routes/main');
 
 const session = require('express-session');
 
@@ -25,12 +26,12 @@ app.use(session({
   }))
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
-app.use('/',productsRouter);
-app.use('/',usuariosRouter);
 
 app.use(localUserCheck);
 
-
+app.use('/',productsRouter);
+app.use('/',usuariosRouter);
+app.use('/',mainRouter);
 
 app.get('/carritodecompras', (req, res)=>{
     const htmlPath=path.resolve(__dirname,rutaAbsoluta+'carrito');

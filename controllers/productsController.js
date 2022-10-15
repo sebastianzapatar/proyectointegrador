@@ -10,18 +10,7 @@ function getRandomInt(max) {
 	return Math.floor(Math.random() * max);
   }
 const controller = {
-	// Root - Show all products
-	index: (req, res) => {
-		console.log(req.session);
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'home');
-		res.render(htmlPath, {
-			products,
-			toThousand,
-			user:req.session.userLogged
-		})
-	},
-
-	// Detail - Detail from one product
+     // Detail - Detail from one product
 	detail: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
 		let id = req.params.id;
@@ -33,11 +22,18 @@ const controller = {
 		})
 	},
 	productos: (req, res) => {
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
+		// const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		
-		res.render(htmlPath,{
-			user:req.session.userLogged
-		})
+		// res.render(htmlPath,{
+		// 	user:req.session.userLogged
+		// })
+		db.products.findAll({
+			include: ['categories']
+        })
+		.then((productos)=>{
+			return res.send(productos)
+		 })
+		 .catch(error => res.send(error))
 	},
 	borrar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'borrar');
@@ -58,7 +54,7 @@ const controller = {
 	},
 	
 	// Create -  Method to store
-	store: (req, res) => {
+	processCreate: (req, res) => {
 		let image;
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		console.log(req.files);
@@ -141,20 +137,26 @@ const controller = {
 		})
 	},
 	
-	createDb: function (req, res) {
-        Productos.create({
-			idProducts: req.body.idProducts,
+
+	processcreateDb: function (req, res) {
+        db.products.create({
 			name: req.body.name,
 			description: req.body.description,
-			image: req.body.image,
+			image: 'auris.jpg',
 			price: req.body.price, 
-			idCategoria: req.body.idCategoria
+			categorieId: req.body.idCategoria
         })
-    .then(()=>{
+    .then((productos)=>{
        return res.redirect('/productos')
     })
-    .catch(error => res.send(error))
-   
-}}
-
+    .catch(error => res.send(error)) 
+},
+    createDb: (req, res) => {
+	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregarDb');
+	
+	res.render(htmlPath,{
+		user:req.session.userLogged
+	})
+},
+}
 module.exports = controller;
