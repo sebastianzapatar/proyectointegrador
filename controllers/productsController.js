@@ -22,14 +22,22 @@ const controller = {
 		})
 	},
 	productos: (req, res) => {
-		db.products.findAll({
-			include: ['categories']
-        })
-		.then((productos)=>{
-			return res.send(productos)
-		 })
-		 .catch(error => res.send(error))
-	},
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
+	   
+	   
+	   db.products.findAll({
+		   include: ['categories']
+	   })
+	   .then((products)=>{
+		   console.log(products);
+		   res.render(htmlPath, {
+			   products,
+			   toThousand,
+			   user:req.session.userLogged
+		   })
+		})
+		.catch(error => res.send(error))
+   },
 	borrar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'borrar');
 		
@@ -142,7 +150,6 @@ const controller = {
 			image: 'auris.jpg',
 			price: req.body.price, 
 			categorieId: req.body.idCategoria
-
         })
     .then((productos)=>{
        return res.redirect('/productos')
