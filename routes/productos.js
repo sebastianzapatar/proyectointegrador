@@ -19,7 +19,7 @@ router.get('/productos/detail/:id',productsController.detail);
 router.get('/productos/',productsController.productos);
 router.get('/productos/borrar/',productsController.borrar);
 router.delete('/productos/borrar/:id',productsController.destroy);
-router.get('/productos/agregarDb', productsController.createDb);
+router.get('/productos/agregarDb', upload.array('pcfiles'),productsController.createDb);
 router.post('/productos/agregarDb',upload.array('pcfiles'),productsController.processcreateDb);
 
 router.put('/productos/editar/:id',upload.array('pcfiles'),productsController.processCreate);
