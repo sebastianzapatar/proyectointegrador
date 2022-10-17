@@ -22,16 +22,19 @@ const controller = {
 		})
 	},
 	productos: (req, res) => {
-		// const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
+		 const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
 		
-		// res.render(htmlPath,{
-		// 	user:req.session.userLogged
-		// })
+		
 		db.products.findAll({
 			include: ['categories']
         })
-		.then((productos)=>{
-			return res.send(productos)
+		.then((products)=>{
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				toThousand,
+				user:req.session.userLogged
+			})
 		 })
 		 .catch(error => res.send(error))
 	},
@@ -56,7 +59,12 @@ const controller = {
 	// Create -  Method to store
 	processCreate: (req, res) => {
 		let image;
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
+		if(req.files[0] != undefined){
+			image = req.files[0].filename
+		} else {
+			image = productToEdit.image
+		}
+		
 		console.log(req.files);
 		if(req.files[0] != undefined){
 			image = '/img/imgHome/'+req.files[0].filename;
@@ -99,7 +107,7 @@ const controller = {
 		let id = req.params.id;
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		let productToEdit = products.find(product => product.id == id)
-		let image
+		let image;
 
 		if(req.files[0] != undefined){
 			image = req.files[0].filename
@@ -145,12 +153,22 @@ const controller = {
 		})
 	},
 	processcreateDb: function (req, res) {
+		let image;
+		if(req.files[0] != undefined){
+			image = '/img/imgHome/'+req.files[0].filename
+		} else {
+			image = productToEdit.image
+		}
+		console.log(image);
         db.products.create({
+			
 			name: req.body.name,
 			description: req.body.description,
-			image: 'auris.jpg',
+			image: image,
 			price: req.body.price, 
-			categorieId: req.body.idCategoria
+			categorieId: req.body.idCategoria,
+			description:req.body.descripcion,
+			categorieId:req.body.idCategoria
         })
     .then((productos)=>{
        return res.redirect('/productos')
