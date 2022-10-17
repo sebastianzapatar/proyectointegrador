@@ -136,8 +136,14 @@ const controller = {
 			user:req.session.userLogged
 		})
 	},
-	
 
+	createDb: (req, res) => {
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregarDb');
+		
+		res.render(htmlPath,{
+			user:req.session.userLogged
+		})
+	},
 	processcreateDb: function (req, res) {
         db.products.create({
 			name: req.body.name,
@@ -150,13 +156,6 @@ const controller = {
        return res.redirect('/productos')
     })
     .catch(error => res.send(error)) 
-},
-    createDb: (req, res) => {
-	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregarDb');
-	
-	res.render(htmlPath,{
-		user:req.session.userLogged
-	})
-},
+}
 }
 module.exports = controller;
