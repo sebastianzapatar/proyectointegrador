@@ -1,12 +1,12 @@
 module.exports=(sequelize,DataTypes)=>{
-    const Rols=sequelize.define("rols",
+    const Rol=sequelize.define("rols",
     {
         idRol:{
             autoIncrement:true,
             primaryKey:true,
             type: DataTypes.INTEGER
         },
-        rolType:{
+        roleType:{
             type:DataTypes.STRING
         }
     }
@@ -16,10 +16,10 @@ module.exports=(sequelize,DataTypes)=>{
         timestamps:false
     }
     );
-    Rol.associate=function(models){
-        Rol.hasMany(models.Usuarios,{
+     Rol.associate=function(models){
+        Rol.hasMany(models.users,{
             as:"users",
-            foreingKey:"idUsers"
+            foreignKey:"rolId"
         })
     }
     return Rol;

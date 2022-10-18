@@ -1,7 +1,7 @@
 module.exports=(sequelize,DataTypes)=>{
     const Productos=sequelize.define("products",
     {
-        idProducts:{
+        idProduct:{
             autoIncrement:true,
             primaryKey:true,
             type: DataTypes.INTEGER
@@ -18,7 +18,7 @@ module.exports=(sequelize,DataTypes)=>{
         price:{
             type:DataTypes.DECIMAL
         },
-        idCategoria:{
+        categorieId:{
             type: DataTypes.INTEGER
         }
     }
@@ -29,9 +29,9 @@ module.exports=(sequelize,DataTypes)=>{
     }
     );
     Productos.associate=function(models){
-        Usuarios.belongsTo(models.Usuarios,{
+        Productos.belongsTo(models.categories,{
             as:"categories",
-            foreingKey:"idCategoria"
+            foreignKey:"categorieId"
         })
     }
     return Productos;

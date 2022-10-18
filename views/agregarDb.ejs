@@ -15,30 +15,29 @@
 <body>
     <%- include('./partials/header') %>
     <main class="registro">
-        <form method="POST" action="/productos/agregarDB" enctype='multipart/form-data'>
-            <label>Imagen</label>
-            <input type="file" required placeholder="Suba la imagen del producto"
-                name="pcfiles"
-               id="files"
-               multiple/><br/>
-            <label>Descripcion</label>
+        <form method="POST" action="/productos/agregarDb" enctype='multipart/form-data'>
+            <label>name</label>
             <input type="text" required placeholder="Ingrese el nombre del producto"
                  id="name"
                 name="name"/><br/>
+            <label>descripcion</label>
+            <input type="text" required placeholder="Ingrese la descripcion del producto"
+                id="description"
+                name="description"/><br/>
+            <label>Imagen</label>
+            <input type="file" required placeholder="Ingrese el precio del producto"
+                id="files"
+                name="pcfiles"/><br/> 
             <label>Precio</label>
             <input type="number" required placeholder="Ingrese el precio del producto"
                 id="price"
                 name="price"/><br/>
-            <label>Cantidad</label>
-            <input type="number" required placeholder="Ingrese el número de productos"
-                id="productos"
-                name="productos"/><br/>
                 <label>Descripcion</label>
-            <textarea required placeholder="la descripcion del producto"
-                id="descripcion"
-                name="descripcion"
-                rows="6"></textarea><br/>
-                <label>idCategoria</label>
+                <textarea required placeholder="la descripcion del producto"
+                    id="descripcion"
+                    name="descripcion"
+                    rows="6"></textarea><br/>
+            <label>idCategoria</label>
             <input type="number" required placeholder="Ingrese la categoria del producto"
                 id="idCategoria"
                 name="idCategoria"/><br/>
