@@ -1,12 +1,14 @@
 [
  {
-  "id": 1298,
-  "nombre": "ee",
-  "email": "sza@er",
+  "id": 1109583,
+  "nombre": "bautista",
+  "email": "cozzanibautista@gmail.com",
   "categoria": "1",
   "password": "$2a$10$xeScP6/QRg3gh/MyvNoKhOJ.39rXq8bvgfsUw21bhpJUw.5hX2iTS",
   "image": "/img/imgRegistro/pcfiles-1661888159500Parcial_Fundamentos_de_Programacion.pdf"
  },
+ 
+
  {
   "id": 3,
   "nombre": "Agustin",
@@ -30,13 +32,6 @@
   "email": "ttomassalim@gmail.com",
   "contrasena": "1234",
   "categoria": 2
- },
- {
-  "id": 1068659,
-  "nombre": "TonySalim",
-  "email": "tomsalim99@gmail.com",
-  "categoria": "2",
-  "password": "$2a$10$pR1xi.btCK2SdKWXSHSXzeCY37AD162MJbQ4qtzcxTsSiAPAnSCiO",
-  "image": "/img/imgRegistro/pcfiles-1662427619295flecha-blanca-abajo.png"
+
  }
 ]
