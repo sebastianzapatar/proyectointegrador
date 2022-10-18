@@ -61,5 +61,12 @@
   "name": "hola",
   "price": "123",
   "image": "/img/imgHome/pcfiles-1665599242723fotoCarnet.jpeg"
+ },
+ {
+  "id": 476623,
+  "name": "holahola",
+  "price": "321",
+  "productos": "52",
+  "image": "/img/imgHome/pcfiles-1666110403498retro-estrella.png"
  }
 ]
