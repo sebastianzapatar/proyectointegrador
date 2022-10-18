@@ -4,6 +4,7 @@ const rutaAbsoluta='../views/';
 const productsFilePath = path.join(__dirname, '../src/data/productos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { dirname } = require('path');
+const { where } = require('sequelize');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let db = require('../database/models');
 function getRandomInt(max) {
@@ -59,47 +60,82 @@ const controller = {
 	// Create -  Method to store
 	processCreate: (req, res) => {
 		let image;
+		let id = req.params.id;
 		if(req.files[0] != undefined){
-			image = req.files[0].filename
+			image = '/img/imgHome/'+req.files[0].filename
 		} else {
 			image = productToEdit.image
 		}
+		console.log(image);
+        db.products.update({
+			
+			name: req.body.name,
+			description: req.body.description,
+			image: image,
+			price: req.body.price, 
+			categorieId: req.body.idCategoria,
+			description:req.body.descripcion,
+			categorieId:req.body.idCategoria
+        },
+	{where: {
+			idProduct: id
+		}})
+    .then((productos)=>{
+       return res.redirect('/productos')
+    })
+    .catch(error => res.send(error)) 
+},
+		// let image;
+		// if(req.files[0] != undefined){
+		// 	image = req.files[0].filename
+		// } else {
+		// 	image = productToEdit.image
+		// }
 		
-		console.log(req.files);
-		if(req.files[0] != undefined){
-			image = '/img/imgHome/'+req.files[0].filename;
-		} else {
-			image = '/img/imgHome/madre.jpg'
-		}
-		let newProduct = {
-			id: getRandomInt(1500000),
-			...req.body,
-			image: image
-		};
-		products.push(newProduct);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-		res.render(htmlPath,{
-			user:req.session.userLogged
-		})
-	},
+		// console.log(req.files);
+		// if(req.files[0] != undefined){
+		// 	image = '/img/imgHome/'+req.files[0].filename;
+		// } else {
+		// 	image = '/img/imgHome/madre.jpg'
+		// }
+		// let newProduct = {
+		// 	id: getRandomInt(1500000),
+		// 	...req.body,
+		// 	image: image
+		// };
+		// products.push(newProduct);
+		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		// res.render(htmlPath,{
+		// 	user:req.session.userLogged
+		// })
+	
 
 	// Update - Form to edit
 	edit: (req, res) => {
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editar');
 		console.log(req.session)
 		let id = req.params.id
-		let productToEdit = products.find(product => product.id == id)
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editar');
-		res.render(htmlPath, {productToEdit,
-			user:req.session.userLogged})
+		db.products.findByPk(id)
+		.then((producto)=>{
+			res.render(htmlPath, {producto,
+				user:req.session.userLogged})
+		 })
+		 .catch(error => res.send(error))
 	},
 	editar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editarT');
-		
-		res.render(htmlPath, {
-			products,
-			toThousand,
-			user:req.session.userLogged
-		})
+		db.products.findAll({
+			include: ['categories']
+        })
+		.then((products)=>{
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				toThousand,
+				user:req.session.userLogged
+			})
+		 })
+		 .catch(error => res.send(error))
 	},
 
 	// Update - Method to update
