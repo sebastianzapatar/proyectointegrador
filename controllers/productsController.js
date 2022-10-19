@@ -39,14 +39,26 @@ const controller = {
 		 })
 		 .catch(error => res.send(error))
 	},
+    delete: (req, res) => {
+        let id = req.params.id;
+		console.log(id);
+        db.products.destroy({where:{idProduct:id}})
+            .then(products => {
+				console.log('resultado' , products);
+                return res.render(path.resolve(__dirname,rutaAbsoluta+'/productos'), {products: []})
+            })
+            .catch(error => res.send(error))
+    },
 	borrar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'borrar');
-		
-		res.render(htmlPath, {
-			products,
-			user:req.session.userLogged,
-			toThousand
-		})
+		let id = req.params.id
+		db.products.findByPk(id)
+		.then((producto)=>{
+			console.log(producto)
+			res.render(htmlPath, {producto,
+				user:req.session.userLogged})
+		 })
+		 .catch(error => res.send(error))
 	},
 	// Create - Form to create
 	create: (req, res) => {
