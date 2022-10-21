@@ -19,22 +19,22 @@
             <% if (producto) { %>  
             <label>Imagen</label>
             <img src="<%= producto.image %>" alt="<%= producto.name %>" width="200px"/>
-            <input type="file" required placeholder="Edita la imagen del producto"
+            <input type="file" placeholder="Edita la imagen del producto"
                 id="files"
                 multiple
                 name="pcfiles"/><br/>
             <label>Descripcion</label>
-            <input type="text" required placeholder="Ingrese el nombre del producto"
+            <input type="text" placeholder="Ingrese el nombre del producto"
             value="<%= producto.name %>"
                  id="name"
                 name="name"/><br/>
             <label>Precio</label>
-            <input type="number" required placeholder="Ingrese el precio del producto"
+            <input type="number" placeholder="Ingrese el precio del producto"
             value="<%= producto.price %>"
                 id="price"
                 name="price"/><br/>
             <label>Cantidad</label>
-            <input type="number" required placeholder="Ingrese el número de productos"
+            <input type="number" placeholder="Ingrese el número de productos"
             value="5"
                 id="productos"
                 name="productos"/><br/>

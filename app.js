@@ -29,7 +29,7 @@ app.use(bp.urlencoded({ extended: true }))
 
 app.use(localUserCheck);
 
-app.use('/',productsRouter);
+app.use('/productos',productsRouter);
 app.use('/',usuariosRouter);
 app.use('/',mainRouter);
 

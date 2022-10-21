@@ -13,6 +13,11 @@
         <link rel="icon" href="/img/imgGeneral/logo.png">
     </head>
 <body>
+    <!-- VISTA EN USO -->
+      <!-- VISTA EN USO -->
+        <!-- VISTA EN USO -->
+          <!-- VISTA EN USO -->
+
     <%- include('./partials/header') %>
     <main class="registro">
         <form method="POST" action="/productos/agregarDB" enctype='multipart/form-data'>
@@ -39,9 +44,15 @@
                 name="descripcion"
                 rows="6"></textarea><br/>
                 <label>idCategoria</label>
-            <input type="number" required placeholder="Ingrese la categoria del producto"
+                <select type="number" placeholder="Ingrese la categoria del producto"
                 id="idCategoria"
-                name="idCategoria"/><br/>
+                name="idCategoria">
+                <option value= ''disabled selected>'Elija una opcion'</option>
+                <% for( let i = 0; i < categories.length; i++ ) { %>
+                    <option value= '<%=categories[i].idCategorie%>'> <%=categories[i].name%></option>
+                <% } %> 
+   
+            </select><br/>
             <button type="submit">Enviar</button>
             <button type="reset">Reestablecer  </button>
         </form>
