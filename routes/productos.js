@@ -24,7 +24,7 @@ router.post('/productos/agregarDb',upload.array('pcfiles'),productsController.pr
 
 router.put('/productos/editar/:id',upload.array('pcfiles'),productsController.processCreate);
 router.get('/productos/editar/',productsController.editar);
-router.get('/productos/agregar', productsController.create);
+router.get('/productos/agregar/', productsController.create);
 router.post('/productos',upload.array('pcfiles'),productsController.processCreate);
 router.get('/productos/editar/:id',productsController.edit);
 module.exports=router;
