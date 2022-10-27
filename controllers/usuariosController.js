@@ -34,9 +34,6 @@ const controller = {
 	store: (req, res) => {
 		let image;
 		const htmlPath = path.resolve(__dirname, rutaAbsoluta + 'registro');
-		const htmlPath2 = path.resolve(__dirname, rutaAbsoluta + '/');
-		console.log('hola');
-		console.log(req.body);
 		if (req.files[0] != undefined) {
 			image = '/img/imgRegistro/' + req.files[0].filename;
 		} else {
@@ -49,7 +46,10 @@ const controller = {
 			password = bcrypt.hashSync(password2, salt);
 			let newUsers = {
 				id: getRandomInt(1500000),
-				name: nombre, email: email, rolId: categoria, password: password,
+				name: nombre, 
+				email: email, 
+				rolId: categoria, 
+				password: password,
 				image: image
 			};
 			console.log(newUsers);
