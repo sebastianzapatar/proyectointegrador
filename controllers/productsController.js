@@ -39,23 +39,35 @@ const controller = {
 		 })
 		 .catch(error => res.send(error))
 	},
+    delete: (req, res) => {
+        let id = req.params.id;
+		console.log(id);
+        db.products.destroy({where:{idProduct:id}})
+            .then(products => {
+				console.log('resultado' , products);
+                return res.render(path.resolve(__dirname,rutaAbsoluta+'/productos'), {products: []})
+            })
+            .catch(error => res.send(error))
+    },
 	borrar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'borrar');
-		
-		res.render(htmlPath, {
-			products,
-			user:req.session.userLogged,
-			toThousand
-		})
+		let id = req.params.id
+		db.products.findByPk(id)
+		.then((producto)=>{
+			console.log(producto)
+			res.render(htmlPath, {producto,
+				user:req.session.userLogged})
+		 })
+		 .catch(error => res.send(error))
 	},
 	// Create - Form to create
-	create: (req, res) => {
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
+	// create: (req, res) => {
+	// 	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
 		
-		res.render(htmlPath,{
-			user:req.session.userLogged
-		})
-	},
+	// 	res.render(htmlPath,{
+	// 		user:req.session.userLogged
+	// 	})
+	// },
 	
 	// Create -  Method to store
 	processCreate: (req, res) => {
@@ -181,12 +193,16 @@ const controller = {
 		})
 	},
 
-	createDb: (req, res) => {
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregarDb');
-		
-		res.render(htmlPath,{
-			user:req.session.userLogged
-		})
+	create: (req, res) => {
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
+		db.categories.findAll()
+		.then((categories)=>{
+			res.render(htmlPath,{
+				user:req.session.userLogged,
+				categories: categories
+			})
+		 })
+		 .catch(error => res.send(error))
 	},
 	processcreateDb: function (req, res) {
 		let image;

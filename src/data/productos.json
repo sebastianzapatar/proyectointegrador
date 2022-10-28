@@ -27,15 +27,6 @@
   "type": "productos destacados"
  },
  {
-  "id": 5,
-  "categoria": "collers",
-  "name": "MICRO AMD RYZEN 5 PRO 4650G C/VIDEO C/COOLER",
-  "price": 13.2,
-  "discount": 0,
-  "image": "/img/imgHome/refri.jpg",
-  "type": "productos destacados"
- },
- {
   "id": 202152,
   "name": "hola",
   "price": "123",
