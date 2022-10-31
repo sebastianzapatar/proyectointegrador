@@ -226,8 +226,18 @@ const controller = {
        return res.redirect('/productos')
     })
     .catch(error => res.send(error)) 
+},
+productodetail : (req,res)=>{
+	db.Product.findByPk(req.params.productoid)
+		.then(producto => {
+			res.render('productos/productdetail.ejs', {producto});
+		});
 }
 }
+
+
+
+
 module.exports = controller;
 
 
