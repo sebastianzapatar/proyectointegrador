@@ -1,12 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const usuariosController=require('../controllers/usuariosController');
-<<<<<<< HEAD
 const validateMiddleware = require ('../Middlewares/validateMiddleware')
-=======
-const authMiddleware = require('../Middlewares/authMiddleware');
-const validateMiddleware = require('../Middlewares/validateMiddleware');
->>>>>>> d2fe471b830f4f877a447f8a7b63fbf9dbe26351
 
 const multer=require('multer');
 const storage=multer.diskStorage({
