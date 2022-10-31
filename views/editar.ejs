@@ -23,7 +23,7 @@
                 id="files"
                 multiple
                 name="pcfiles"/><br/>
-            <label>Descripcion</label>
+            <label>Nombre</label>
             <input type="text" placeholder="Ingrese el nombre del producto"
             value="<%= producto.name %>"
                  id="name"
@@ -38,6 +38,12 @@
             value="5"
                 id="productos"
                 name="productos"/><br/>
+                <label>Descripcion</label>
+                <input type="text" placeholder="Ingrese la descripcion del producto"
+                value="<%= descripcion.name %>"
+                     id="descripcion"
+                    name="descripcion"/><br/>    
+                
             <button type="submit">Enviar</button>
             <button type="reset">Reestablecer  </button>
             <% } %>
