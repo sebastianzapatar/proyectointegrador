@@ -12,16 +12,7 @@ function getRandomInt(max) {
   }
 const controller = {
      // Detail - Detail from one product
-	detail: (req, res) => {
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
-		let id = req.params.id;
-		let product = products.find(product => product.id == id)
-		res.render(htmlPath, {
-			product,
-			user:req.session.userLogged,
-			toThousand
-		})
-	},
+
 	productos: (req, res) => {
 		 const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
 		
@@ -195,10 +186,10 @@ const controller = {
 
 	create: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
+		console.log(htmlPath);
 		db.categories.findAll()
 		.then((categories)=>{
 			res.render(htmlPath,{
-				user:req.session.userLogged,
 				categories: categories
 			})
 		 })
@@ -226,6 +217,16 @@ const controller = {
        return res.redirect('/productos')
     })
     .catch(error => res.send(error)) 
+},
+detail : (req,res)=>{
+	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'detail');
+	let id = req.params.id
+	db.products.findByPk(id)
+	.then((producto)=>{
+		res.render(htmlPath, {producto,
+			user:req.session.userLogged})
+	 })
+	 .catch(error => res.send(error))
 }
 }
 module.exports = controller;
