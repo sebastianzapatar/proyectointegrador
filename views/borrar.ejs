@@ -26,15 +26,12 @@
     <div class="productos">
         <i class="fa-solid fa-arrow-left-long"></i> 
 
-        <% products.forEach(function(products) { %>
-          
-      
     <div class="producto1">
-         <img src="<%= products.image %>" alt="<%= products.name %>" width="200px">
-         <p class= "descripcionDelProducto"> <%= products.name %>
-         <p class= "precio"><%= products.price %></p>
+         <img src="<%= producto.image %>" alt="<%= producto.name %>" width="200px">
+         <p class= "descripcionDelProducto"> <%= producto.name %>
+         <p class= "precio"><%= producto.price %></p>
 
-         <form method="POST" action="/productos/borrar/<%- products.id %>?_method=DELETE">
+         <form method="POST" action="/productos/borrar/<%- producto.idProduct %>?_method=DELETE">
             <input type="hidden" name="_method" value="delete">
            <button type="submit">
             <a
@@ -45,7 +42,6 @@
            </button> 
 </form>
     </div>
-    <% }); %>
     
     <i class="fa-solid fa-arrow-right-long"></i> 
     </div>
@@ -55,5 +51,3 @@
        <%- include('./partials/footer') %>
 </body>
 </html>
-
-<!-- <p class="button"> <a href="/editar/<%- products.id %>">editar producto</a> </p> -->

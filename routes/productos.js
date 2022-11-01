@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const productsController=require('../controllers/productsController');
+const authMiddleware = require('../Middlewares/authMiddleware');
+const validateMiddleware = require('../Middlewares/validateMiddleware');
+
 
 const multer=require('multer');
 const storage=multer.diskStorage({
@@ -12,15 +15,14 @@ const storage=multer.diskStorage({
     }
 })
 const upload=multer({storage:storage})
-router.get('/',productsController.index);
-router.get('/home',productsController.index);
-router.get('/productos/detail/:id',productsController.detail);
-router.get('/productos/',productsController.productos);
-router.get('/productos/borrar/',productsController.borrar);
-router.delete('/productos/borrar/:id',productsController.destroy);
-router.get('/productos/agregar',productsController.create);
-router.put('/productos/editar/:id',upload.array('pcfiles'),productsController.store);
-router.get('/productos/editar/',productsController.editar);
-router.post('/productos',upload.array('pcfiles'),productsController.store);
-router.get('/productos/editar/:id',productsController.edit);
+router.get('/detail/:id',productsController.detail);
+router.get('/',productsController.productos);
+router.get('/borrar/:id',productsController.borrar);
+router.delete('/borrar/:id',productsController.delete);
+router.post('/agregarDb',upload.array('pcfiles'),productsController.processcreateDb);
+router.put('/editar/:id',upload.array('pcfiles'),productsController.processCreate);
+router.get('/editar/',productsController.editar);
+router.get('/agregar/', productsController.create);
+router.post('/',upload.array('pcfiles'),productsController.processCreate);
+router.get('/editar/:id',productsController.edit);
 module.exports=router;

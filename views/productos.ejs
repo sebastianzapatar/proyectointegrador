@@ -49,14 +49,21 @@
     <br>
     
     <section class="product-list">
-        <div class="product-item">
-            <% if (product) { %>  
-            <img src="<%= product.image %>" alt="<%= product.name %>" width="200px"/>
-            <p><%= product.name %></p>
-            <strong>$<%= product.price %></strong><br>
-            <em><a href="#">agregar al carrito</a></em>
-        </div>
-        <% } %>
+ <% products.forEach(function(products) { %>
+          
+      
+            <div class="product-item">
+                 <img src="<%= products.image %>" alt="<%= products.name %>" width="200px">
+                 <p class= "descripcionDelProducto"> <%= products.name %>
+                 <p class= "precio">$ <%= products.price %></p>
+                 <p class= "agregarAlCarrito">Agregar al carrito</p>
+                 <p class= "categoria"> <%= products.categories.name %></p>
+                 <a href="/productos/<%= products.idProduct %>">Ver detalle</a>
+                 <a href="/productos/editar/<%= products.idProduct %>">Editar</a>
+                 <a href="/productos/borrar/<%= products.idProduct %>">Borrar</a>
+
+            </div>
+            <% }); %>
        
     </section>
     </main>  

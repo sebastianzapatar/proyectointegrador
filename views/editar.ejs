@@ -15,29 +15,35 @@
 <body>
     <%- include('./partials/header') %>
     <main class="registro">
-        <form  method="POST" action="/productos/editar/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data">
-            <% if (productToEdit) { %>  
+        <form  method="POST" action="/productos/editar/<%= producto.idProduct %>?_method=PUT" enctype="multipart/form-data">
+            <% if (producto) { %>  
             <label>Imagen</label>
-            <img src="<%= productToEdit.image %>" alt="<%= productToEdit.name %>" width="200px"/>
-            <input type="file" required placeholder="Edita la imagen del producto"
+            <img src="<%= producto.image %>" alt="<%= producto.name %>" width="200px"/>
+            <input type="file" placeholder="Edita la imagen del producto"
                 id="files"
                 multiple
                 name="pcfiles"/><br/>
-            <label>Descripcion</label>
-            <input type="text" required placeholder="Ingrese el nombre del producto"
-            value="<%= productToEdit.name %>"
+            <label>Nombre</label>
+            <input type="text" placeholder="Ingrese el nombre del producto"
+            value="<%= producto.name %>"
                  id="name"
                 name="name"/><br/>
             <label>Precio</label>
-            <input type="number" required placeholder="Ingrese el precio del producto"
-            value="<%= productToEdit.price %>"
+            <input type="number" placeholder="Ingrese el precio del producto"
+            value="<%= producto.price %>"
                 id="price"
                 name="price"/><br/>
             <label>Cantidad</label>
-            <input type="number" required placeholder="Ingrese el número de productos"
+            <input type="number" placeholder="Ingrese el número de productos"
             value="5"
                 id="productos"
                 name="productos"/><br/>
+                <label>Descripcion</label>
+                <input type="text" placeholder="Ingrese la descripcion del producto"
+                value="<%= descripcion.name %>"
+                     id="descripcion"
+                    name="descripcion"/><br/>    
+                
             <button type="submit">Enviar</button>
             <button type="reset">Reestablecer  </button>
             <% } %>
