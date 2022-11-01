@@ -7,13 +7,14 @@
         <h2><%= locals.userLogged.nombre%></h2>
     <% } %>
     <% if(locals.userLogged == null) { %>
-    <a href="/login"><h2>INICIAR SESION</h2></a>
+    <a href="/registro/login"><h2>INICIAR SESION</h2></a>
     <% } %>
     </div>
     <hr>
     <nav class="box2">
         <ul>
     <a href="/productos" class="nav-link">PRODUCTOS</a>
+    <a href="/carrito" class="nav-link">CARRITO</a>
     <a href="/productos/agregar" class="nav-link">AGREGAR PRODUCTOS</a>
     <a href="/registro/agregar" class="nav-link">REGISTRO</a>
     <a href="/ayuda" class="nav-link">AYUDA</a>
