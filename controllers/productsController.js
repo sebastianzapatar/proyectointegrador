@@ -96,19 +96,32 @@ const controller = {
 		 .catch(error => res.send(error))
 	},
 	processEdit: (req, res) => {
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editarT');
-		db.products.findAll({
-			include: ['categories']
-        })
-		.then((products)=>{
-			console.log(products);
-			res.render(htmlPath, {
-				products,
-				toThousand,
-				user:req.session.userLogged
-			})
-		 })
-		 .catch(error => res.send(error))
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
+		let image;
+		let id = req.params.id;
+		console.log(id);
+		if(req.files[0] != undefined){
+			image = '/img/imgHome/'+req.files[0].filename
+		} else {
+			image = productToEdit.image
+		}
+		console.log(image);
+        db.products.update({
+			
+			name: req.body.name,
+			description: req.body.description,
+			image: image,
+			price: req.body.price, 
+			categorieId: req.body.idCategoria,
+			description:req.body.descripcion,
+			categorieId:req.body.idCategoria
+        },{
+			where:{idProduct:id}	
+		})
+    .then((productos)=>{
+       return res.redirect('/productos')
+    })
+    .catch(error => res.send(error)) 
 	},
 
 	create: (req, res) => {
