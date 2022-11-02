@@ -19,30 +19,33 @@
             <label>idProducts</label>
             
             <label>name</label>
-            <input type="text" required placeholder="Ingrese el nombre del producto"
+            <input type="text" placeholder="Ingrese el nombre del producto"
                  id="name"
                 name="name"/><br/>
             <label>descripcion</label>
-            <input type="text" required placeholder="Ingrese la descripcion del producto"
+            <input type="text" placeholder="Ingrese la descripcion del producto"
                 id="description"
                 name="description"/><br/>
-            <label>Imagen</label>
-            <input type="file" required placeholder="Ingrese el precio del producto"
-                id="image"
-                name="image"/><br/> 
+                <label>Imagen</label>
+                <input type="file" placeholder="Ingrese el precio del producto"
+                    id="files"
+                    name="pcfiles"/><br/> 
             <label>Precio</label>
-            <input type="number" required placeholder="Ingrese el precio del producto"
+            <input type="number" placeholder="Ingrese el precio del producto"
                 id="price"
                 name="price"/><br/>
                 <label>Descripcion</label>
-                <textarea required placeholder="la descripcion del producto"
+                <textarea placeholder="la descripcion del producto"
                     id="descripcion"
                     name="descripcion"
                     rows="6"></textarea><br/>
             <label>idCategoria</label>
-            <input type="number" required placeholder="Ingrese la categoria del producto"
+            <select type="number" placeholder="Ingrese la categoria del producto"
                 id="idCategoria"
-                name="idCategoria"/><br/>
+                name="idCategoria"> 
+        <option value="1">Placas de video</option>
+        <option value="2">Monitores</option>
+            </select><br/>
             <button type="submit">Enviar</button>
             <button type="reset">Reestablecer  </button>
         </form>

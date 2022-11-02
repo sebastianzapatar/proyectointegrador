@@ -13,6 +13,11 @@
         <link rel="icon" href="/img/imgGeneral/logo.png">
     </head>
 <body>
+    <!-- VISTA EN USO -->
+      <!-- VISTA EN USO -->
+        <!-- VISTA EN USO -->
+          <!-- VISTA EN USO -->
+
     <%- include('./partials/header') %>
     <main class="registro">
 <<<<<<< HEAD
@@ -25,7 +30,7 @@
                 name="pcfiles"
                id="files"
                multiple/><br/>
-            <label>Descripcion</label>
+            <label>Nombre</label>
             <input type="text" required placeholder="Ingrese el nombre del producto"
                  id="name"
                 name="name"/><br/>
@@ -38,14 +43,20 @@
                 id="productos"
                 name="productos"/><br/>
                 <label>Descripcion</label>
-            <textarea required placeholder="la descripcion del producto"
+            <textarea required placeholder="Ingrese la descripcion del producto"
                 id="descripcion"
                 name="descripcion"
                 rows="6"></textarea><br/>
                 <label>idCategoria</label>
-            <input type="number" required placeholder="Ingrese la categoria del producto"
+                <select type="number" placeholder="Ingrese la categoria del producto"
                 id="idCategoria"
-                name="idCategoria"/><br/>
+                name="idCategoria">
+                <option value= ''disabled selected>'Elija una opcion'</option>
+                <% for( let i = 0; i < categories.length; i++ ) { %>
+                    <option value= '<%=categories[i].idCategorie%>'> <%=categories[i].name%></option>
+                <% } %> 
+   
+            </select><br/>
             <button type="submit">Enviar</button>
             <button type="reset">Reestablecer  </button>
         </form>

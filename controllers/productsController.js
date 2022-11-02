@@ -4,6 +4,7 @@ const rutaAbsoluta='../views/';
 const productsFilePath = path.join(__dirname, '../src/data/productos.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const { dirname } = require('path');
+const { where } = require('sequelize');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let db = require('../database/models');
 function getRandomInt(max) {
@@ -11,17 +12,9 @@ function getRandomInt(max) {
   }
 const controller = {
      // Detail - Detail from one product
-	detail: (req, res) => {
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
-		let id = req.params.id;
-		let product = products.find(product => product.id == id)
-		res.render(htmlPath, {
-			product,
-			user:req.session.userLogged,
-			toThousand
-		})
-	},
+
 	productos: (req, res) => {
+<<<<<<< HEAD
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
 	   
 	   
@@ -38,27 +31,63 @@ const controller = {
 		})
 		.catch(error => res.send(error))
    },
+=======
+		 const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
+		
+		
+		db.products.findAll({
+			include: ['categories']
+        })
+		.then((products)=>{
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				toThousand,
+				user:req.session.userLogged
+			})
+		 })
+		 .catch(error => res.send(error))
+	},
+    delete: (req, res) => {
+        let id = req.params.id;
+		console.log(id);
+        db.products.destroy({where:{idProduct:id}})
+            .then(products => {
+				console.log('resultado' , products);
+                return res.render(path.resolve(__dirname,rutaAbsoluta+'/productos'), {products: []})
+            })
+            .catch(error => res.send(error))
+    },
+>>>>>>> 8dd64119d81cb3e7558ead281a09b8e2d1e68479
 	borrar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'borrar');
-		
-		res.render(htmlPath, {
-			products,
-			user:req.session.userLogged,
-			toThousand
-		})
+		let id = req.params.id
+		db.products.findByPk(id)
+		.then((producto)=>{
+			console.log(producto)
+			res.render(htmlPath, {producto,
+				user:req.session.userLogged})
+		 })
+		 .catch(error => res.send(error))
 	},
 	// Create - Form to create
+<<<<<<< HEAD
 	create: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregarDb');
+=======
+	// create: (req, res) => {
+	// 	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
+>>>>>>> 8dd64119d81cb3e7558ead281a09b8e2d1e68479
 		
-		res.render(htmlPath,{
-			user:req.session.userLogged
-		})
-	},
+	// 	res.render(htmlPath,{
+	// 		user:req.session.userLogged
+	// 	})
+	// },
 	
 	// Create -  Method to store
 	processCreate: (req, res) => {
 		let image;
+<<<<<<< HEAD
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		console.log(req.files);
 		if(req.files[0] != undefined){
@@ -77,24 +106,84 @@ const controller = {
 			user:req.session.userLogged
 		})
 	},
+=======
+		let id = req.params.id;
+		if(req.files[0] != undefined){
+			image = '/img/imgHome/'+req.files[0].filename
+		} else {
+			image = productToEdit.image
+		}
+		console.log(image);
+        db.products.update({
+			
+			name: req.body.name,
+			description: req.body.description,
+			image: image,
+			price: req.body.price, 
+			categorieId: req.body.idCategoria,
+			description:req.body.descripcion,
+			categorieId:req.body.idCategoria
+        },
+	{where: {
+			idProduct: id
+		}})
+    .then((productos)=>{
+       return res.redirect('/productos')
+    })
+    .catch(error => res.send(error)) 
+},
+		// let image;
+		// if(req.files[0] != undefined){
+		// 	image = req.files[0].filename
+		// } else {
+		// 	image = productToEdit.image
+		// }
+		
+		// console.log(req.files);
+		// if(req.files[0] != undefined){
+		// 	image = '/img/imgHome/'+req.files[0].filename;
+		// } else {
+		// 	image = '/img/imgHome/madre.jpg'
+		// }
+		// let newProduct = {
+		// 	id: getRandomInt(1500000),
+		// 	...req.body,
+		// 	image: image
+		// };
+		// products.push(newProduct);
+		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		// res.render(htmlPath,{
+		// 	user:req.session.userLogged
+		// })
+	
+>>>>>>> 8dd64119d81cb3e7558ead281a09b8e2d1e68479
 
 	// Update - Form to edit
 	edit: (req, res) => {
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editar');
 		console.log(req.session)
 		let id = req.params.id
-		let productToEdit = products.find(product => product.id == id)
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editar');
-		res.render(htmlPath, {productToEdit,
-			user:req.session.userLogged})
+		db.products.findByPk(id)
+		.then((producto)=>{
+			res.render(htmlPath, {producto,
+				user:req.session.userLogged})
+		 })
+		 .catch(error => res.send(error))
 	},
 	editar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editarT');
-		
-		res.render(htmlPath, {
-			products,
-			toThousand,
-			user:req.session.userLogged
-		})
+		db.products.findAll({
+			include: ['categories']
+        })
+		.then((products)=>{
+			console.log(products);
+			res.render(htmlPath, {
+				products,
+				toThousand,
+				user:req.session.userLogged
+			})
+		 })
+		 .catch(error => res.send(error))
 	},
 
 	// Update - Method to update
@@ -139,10 +228,23 @@ const controller = {
 			user:req.session.userLogged
 		})
 	},
-	
+
+<<<<<<< HEAD
 
 
-
+=======
+	create: (req, res) => {
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
+		console.log(htmlPath);
+		db.categories.findAll()
+		.then((categories)=>{
+			res.render(htmlPath,{
+				categories: categories
+			})
+		 })
+		 .catch(error => res.send(error))
+	},
+>>>>>>> 8dd64119d81cb3e7558ead281a09b8e2d1e68479
 	processcreateDb: function (req, res) {
         db.products.create({
 			name: req.body.name,
@@ -156,12 +258,15 @@ const controller = {
     })
     .catch(error => res.send(error)) 
 },
-    createDb: (req, res) => {
-	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregarDb');
-	
-	res.render(htmlPath,{
-		user:req.session.userLogged
-	})
-},
+detail : (req,res)=>{
+	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'detail');
+	let id = req.params.id
+	db.products.findByPk(id)
+	.then((producto)=>{
+		res.render(htmlPath, {producto,
+			user:req.session.userLogged})
+	 })
+	 .catch(error => res.send(error))
+}
 }
 module.exports = controller;

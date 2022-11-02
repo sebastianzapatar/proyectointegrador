@@ -44,7 +44,7 @@ const controller = {
 		}
 		let { nombre, email, categoria, password, password2 } = req.body;
 		let user = usuarios.find(user => user.email == email);
-		if (password === password2 && user == null) {
+		if (password === password2) {
 			const salt = bcrypt.genSaltSync(saltRounds);
 			password = bcrypt.hashSync(password2, salt);
 			let newUsers = {
