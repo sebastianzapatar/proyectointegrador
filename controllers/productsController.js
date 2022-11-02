@@ -14,24 +14,6 @@ const controller = {
      // Detail - Detail from one product
 
 	productos: (req, res) => {
-<<<<<<< HEAD
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
-	   
-	   
-	   db.products.findAll({
-		   include: ['categories']
-	   })
-	   .then((products)=>{
-		   console.log(products);
-		   res.render(htmlPath, {
-			   products,
-			   toThousand,
-			   user:req.session.userLogged
-		   })
-		})
-		.catch(error => res.send(error))
-   },
-=======
 		 const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
 		
 		
@@ -58,7 +40,6 @@ const controller = {
             })
             .catch(error => res.send(error))
     },
->>>>>>> 8dd64119d81cb3e7558ead281a09b8e2d1e68479
 	borrar: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'borrar');
 		let id = req.params.id
@@ -71,13 +52,8 @@ const controller = {
 		 .catch(error => res.send(error))
 	},
 	// Create - Form to create
-<<<<<<< HEAD
-	create: (req, res) => {
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregarDb');
-=======
 	// create: (req, res) => {
 	// 	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
->>>>>>> 8dd64119d81cb3e7558ead281a09b8e2d1e68479
 		
 	// 	res.render(htmlPath,{
 	// 		user:req.session.userLogged
@@ -87,26 +63,6 @@ const controller = {
 	// Create -  Method to store
 	processCreate: (req, res) => {
 		let image;
-<<<<<<< HEAD
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
-		console.log(req.files);
-		if(req.files[0] != undefined){
-			image = '/img/imgHome/'+req.files[0].filename;
-		} else {
-			image = '/img/imgHome/madre.jpg'
-		}
-		let newProduct = {
-			id: getRandomInt(1500000),
-			...req.body,
-			image: image
-		};
-		products.push(newProduct);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-		res.render(htmlPath,{
-			user:req.session.userLogged
-		})
-	},
-=======
 		let id = req.params.id;
 		if(req.files[0] != undefined){
 			image = '/img/imgHome/'+req.files[0].filename
@@ -156,7 +112,6 @@ const controller = {
 		// 	user:req.session.userLogged
 		// })
 	
->>>>>>> 8dd64119d81cb3e7558ead281a09b8e2d1e68479
 
 	// Update - Form to edit
 	edit: (req, res) => {
@@ -191,7 +146,7 @@ const controller = {
 		let id = req.params.id;
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
 		let productToEdit = products.find(product => product.id == id)
-		let image
+		let image;
 
 		if(req.files[0] != undefined){
 			image = req.files[0].filename
@@ -229,10 +184,6 @@ const controller = {
 		})
 	},
 
-<<<<<<< HEAD
-
-
-=======
 	create: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
 		console.log(htmlPath);
@@ -244,14 +195,23 @@ const controller = {
 		 })
 		 .catch(error => res.send(error))
 	},
->>>>>>> 8dd64119d81cb3e7558ead281a09b8e2d1e68479
 	processcreateDb: function (req, res) {
+		let image;
+		if(req.files[0] != undefined){
+			image = '/img/imgHome/'+req.files[0].filename
+		} else {
+			image = productToEdit.image
+		}
+		console.log(image);
         db.products.create({
+			
 			name: req.body.name,
 			description: req.body.description,
-			image: 'auris.jpg',
+			image: image,
 			price: req.body.price, 
-			categorieId: req.body.idCategoria
+			categorieId: req.body.idCategoria,
+			description:req.body.descripcion,
+			categorieId:req.body.idCategoria
         })
     .then((productos)=>{
        return res.redirect('/productos')
