@@ -584,6 +584,23 @@ button {
     margin-top: 4%;
     border: 1px solid rgb(204, 198, 198) 
 }
+.details {
+display: flex;
+box-sizing: border-box;
+flex-direction: row;
+justify-content: space-between;
+}
+.product_img {
+ display: flex;
+ width: 230px;
+
+}
+.buttonDetailssss{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
 /* CSS DE PRODUCTOS */
 
 /* colores: 

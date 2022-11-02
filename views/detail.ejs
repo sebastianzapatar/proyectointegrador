@@ -17,21 +17,18 @@
     <!-- header -->
     <%- include('./partials/header') %>
     
-    <main >
-
-        <section >
-            <div class="photos">
-                <div class = "extra-photos">
+    <main class="registro">
+        <section>
+            <div>
+                <div>
                     <article>
                         <img src="<%= producto.image%>"  alt="imagen 1" class="product_img">
                     </article>
                 </div>
             </div>
-            <di class="text">
-                <div class= "info">
+                <div>
                     <h4><%= producto.name_product%></h4>
-                    <p class="price">MX$<%= producto.price%></p>
-        
+                    <p>US$ <%= producto.price%></p>       
                 </div>
         
 <div class= "extra-info">
@@ -47,30 +44,15 @@
 
             </div>
 
-            
-            
         </section>
 
-
-        <div class="open">
-            <p>Descripción y detalles</p><i class="fas fa-chevron-down"></i>
-
-        </div>
-        <div class="open">
-            <p>Datos de envío</p><i class="fas fa-chevron-down"></i>
-
-        </div>
-        <div class="open">
-            <p>Opciones de pago</p><i class="fas fa-chevron-down"></i>
-
-        </div>
-        <div class="open">
-            <p>Devolución e intercambios</p><i class="fas fa-chevron-down"></i>
-
-        </div>
-        
-        
-
+            <div class="buttonDetailssss">
+            <label> Forma de pago </label>
+            <input type="radio" name="medio" value= "Efectivo"></input>
+            <input type="radio" name="medio" value= "Tarjeta de credito"></input>
+            <input type="radio" name="medio" value= "Tarjeta de debito"></input>
+            </div>
+ 
     </main>
 
     <!-- footer -->
