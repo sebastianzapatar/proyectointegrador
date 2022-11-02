@@ -38,12 +38,21 @@
             value="5"
                 id="productos"
                 name="productos"/><br/>
-                <label>Descripcion</label>
-                <input type="text" placeholder="Ingrese la descripcion del producto"
-                value="<%= descripcion.name %>"
+            <label>Descripcion</label>
+            <input type="text" placeholder="Ingrese la descripcion del producto"
+                value="<%= producto.descripcion %>"
                      id="descripcion"
                     name="descripcion"/><br/>    
-                
+            <label>Categoria</label>
+            <select type="number" placeholder="Ingrese la categoria del producto"
+            value="<%= producto.idCategoria %>"
+                id="idCategoria"
+                name="idCategoria"><br/>
+                <option value= ''disabled selected>'Elija una opcion'</option>
+                <% for( let i = 0; i < categories.length; i++ ) { %>
+                    <option value= '<%=categories[i].idCategorie%>'> <%=categories[i].name%></option>
+                <% } %> 
+            </select>    
             <button type="submit">Enviar</button>
             <button type="reset">Reestablecer  </button>
             <% } %>

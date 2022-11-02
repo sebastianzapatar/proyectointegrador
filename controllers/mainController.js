@@ -23,15 +23,20 @@ const controller = {
 
 			
 		},
-	search: (req, res) => {
-		let search = req.query.keywords;
-		let productsToSearch = products.filter(product => product.name.toLowerCase().includes(search));	
-		res.render('results', { 
-			products: productsToSearch, 
-			search,
-			toThousand,
-		});
-	},
+
+	carrito: (req, res) => {
+	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'carrito');
+    res.render(htmlPath,{
+        user:req.session.usserLogged
+    })
+}, 
+
+ayuda: (req, res) => {
+	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'ayuda');
+    res.render(htmlPath,{
+        user:req.session.usserLogged
+    })
+}
 };
 
 module.exports = controller;
