@@ -13,12 +13,13 @@ const saltRounds = 10;
 // Create - Form to create
 const controller = {
 	login: (req, res) => {
+		console.log(req.session);
 		const htmlPath = path.resolve(__dirname, rutaAbsoluta + 'login');
 		res.render(htmlPath, {
 			user: req.session.userLogged
 		})
 	},
-	login: (req, res) => {
+	processLogin: (req, res) => {
 		let { email, password } = req.body;
 		const salt = bcrypt.genSaltSync(saltRounds);
 		//password = bcrypt.hashSync(password, salt);
@@ -109,3 +110,6 @@ const controller = {
 	
 }
 module.exports = controller
+
+
+

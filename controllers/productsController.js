@@ -73,7 +73,7 @@ const controller = {
 		 .catch(error => res.send(error))
 	},
 	processEdit: (req, res) => {
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editarT');
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editar');
 		db.products.findAll({
 			include: ['categories']
         })

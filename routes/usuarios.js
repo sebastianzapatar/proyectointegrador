@@ -17,5 +17,5 @@ const upload=multer({storage:storage})
 router.get('/registro/agregar', usuariosController.create);
 router.get('/registro/login',validateMiddleware, usuariosController.login);
 router.post('/registro/agregar',upload.array('pcfiles'),usuariosController.store);
-router.post('/registro/login',usuariosController.login);
+router.post('/registro/login',usuariosController.processLogin);
 module.exports=router;
