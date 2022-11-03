@@ -30,6 +30,3 @@ router.get('/',productsController.productos);
 
 module.exports=router;
 
-// router.post('/',upload.array('pcfiles'),productsController.processCreate);
-// router.get('/productos/agregarDb', upload.array('pcfiles'),productsController.createDb);
-// router.get('/editar/',productsController.editar);

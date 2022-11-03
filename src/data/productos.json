@@ -25,39 +25,5 @@
   "discount": 0,
   "image": "/img/imgHome/madre.jpg",
   "type": "productos destacados"
- },
- {
-  "id": 202152,
-  "name": "hola",
-  "price": "123",
-  "productos": "1",
-  "image": "/img/imgHome/pcfiles-1665598536870fotoCarnet.jpeg"
- },
- {
-  "id": 382467,
-  "productos": [
-   "1",
-   "1"
-  ],
-  "name": "hola",
-  "price": "123",
-  "image": "/img/imgHome/pcfiles-1665599200578fotoCarnet.jpeg"
- },
- {
-  "id": 550514,
-  "productos": [
-   "1",
-   "1"
-  ],
-  "name": "hola",
-  "price": "123",
-  "image": "/img/imgHome/pcfiles-1665599242723fotoCarnet.jpeg"
- },
- {
-  "id": 476623,
-  "name": "holahola",
-  "price": "321",
-  "productos": "52",
-  "image": "/img/imgHome/pcfiles-1666110403498retro-estrella.png"
  }
 ]

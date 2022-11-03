@@ -55,9 +55,32 @@ const controller = {
 				console.log('resultado' , products);
                 return res.render(path.resolve(__dirname,rutaAbsoluta+'/productos'), {products: []})
             })
-            .catch(error => res.send(error))
-    },
-
+    .catch(error => res.send(error)) 
+},
+		// let image;
+		// if(req.files[0] != undefined){
+		// 	image = req.files[0].filename
+		// } else {
+		// 	image = productToEdit.image
+		// }
+		
+		// console.log(req.files);
+		// if(req.files[0] != undefined){
+		// 	image = '/img/imgHome/'+req.files[0].filename;
+		// } else {
+		// 	image = '/img/imgHome/madre.jpg'
+		// }
+		// let newProduct = {
+		// 	id: getRandomInt(1500000),
+		// 	...req.body,
+		// 	image: image
+		// };
+		// products.push(newProduct);
+		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		// res.render(htmlPath,{
+		// 	user:req.session.userLogged
+		// })
+	
 
 	edit: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'editar');
@@ -86,14 +109,41 @@ const controller = {
 			})
 		 })
 		 .catch(error => res.send(error))
+
+		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
+		let image;
+		let id = req.params.id;
+		console.log(id);
+		if(req.files[0] != undefined){
+			image = '/img/imgHome/'+req.files[0].filename
+		} else {
+			image = productToEdit.image
+		}
+		console.log(image);
+        db.products.update({
+			
+			name: req.body.name,
+			description: req.body.description,
+			image: image,
+			price: req.body.price, 
+			categorieId: req.body.idCategoria,
+			description:req.body.descripcion,
+			categorieId:req.body.idCategoria
+        },{
+			where:{idProduct:id}	
+		})
+    .then((productos)=>{
+       return res.redirect('/productos')
+    })
+    .catch(error => res.send(error)) 
 	},
 
 	create: (req, res) => {
 		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
+		console.log(htmlPath);
 		db.categories.findAll()
 		.then((categories)=>{
 			res.render(htmlPath,{
-				user:req.session.userLogged,
 				categories: categories
 			})
 		 })
@@ -121,108 +171,16 @@ const controller = {
        return res.redirect('/productos')
     })
     .catch(error => res.send(error)) 
+},
+detail : (req,res)=>{
+	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'detail');
+	let id = req.params.id
+	db.products.findByPk(id)
+	.then((producto)=>{
+		res.render(htmlPath, {producto,
+			user:req.session.userLogged})
+	 })
+	 .catch(error => res.send(error))
 }
 }
 module.exports = controller;	
-
-
-// Create - Form to create
-	// create: (req, res) => {
-	// 	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'agregar');
-		
-	// 	res.render(htmlPath,{
-	// 		user:req.session.userLogged
-	// 	})
-	// },
-	
-	// Create -  Method to store
-// 	processCreate: (req, res) => {
-// 		let image;
-// 		let id = req.params.id;
-// 		if(req.files[0] != undefined){
-// 			image = '/img/imgHome/'+req.files[0].filename
-// 		} else {
-// 			image = productToEdit.image
-// 		}
-// 		console.log(image);
-//         db.products.update({
-			
-// 			name: req.body.name,
-// 			description: req.body.description,
-// 			image: image,
-// 			price: req.body.price, 
-// 			categorieId: req.body.idCategoria,
-// 			description:req.body.descripcion,
-// 			categorieId:req.body.idCategoria
-//         },
-// 	{where: {
-// 			idProduct: id
-// 		}})
-//     .then((productos)=>{
-//        return res.redirect('/productos')
-//     })
-//     .catch(error => res.send(error)) 
-// },
-		// let image;
-		// if(req.files[0] != undefined){
-		// 	image = req.files[0].filename
-		// } else {
-		// 	image = productToEdit.image
-		// }
-		
-		// console.log(req.files);
-		// if(req.files[0] != undefined){
-		// 	image = '/img/imgHome/'+req.files[0].filename;
-		// } else {
-		// 	image = '/img/imgHome/madre.jpg'
-		// }
-		// let newProduct = {
-		// 	id: getRandomInt(1500000),
-		// 	...req.body,
-		// 	image: image
-		// };
-		// products.push(newProduct);
-		// fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-		// res.render(htmlPath,{
-		// 	user:req.session.userLogged
-		// })
-		// destroy : (req, res) => {
-	// 	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
-	// 	let id = req.params.id;
-	// 	let finalProducts = products.filter(product => product.id != id);
-	// 	fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, ' '));
-	// 	res.render(htmlPath, {
-	// 		user:req.session.userLogged
-	// 	})
-	// },
-    //update: (req, res) => {
-	// 	let id = req.params.id;
-	// 	const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos2');
-	// 	let productToEdit = products.find(product => product.id == id)
-	// 	let image;
-
-	// 	if(req.files[0] != undefined){
-	// 		image = req.files[0].filename
-	// 	} else {
-	// 		image = productToEdit.image
-	// 	}
-
-	// 	productToEdit = {
-	// 		id: productToEdit.id,
-	// 		...req.body,
-	// 		image: image,
-	// 	};
-		
-	// 	let newProducts = products.map(product => { 
-	// 		if (product.id == productToEdit.id) {
-	// 			return product = {...productToEdit};
-	// 		}
-	// 		return product;
-	// 	})
-
-	// 	fs.writeFileSync(productsFilePath, JSON.stringify(newProducts, null, ' '));
-	// 	res.render(htmlPath, {
-	// 		user:req.session.userLogged
-	// 	})
-	// },
-
