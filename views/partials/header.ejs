@@ -13,9 +13,13 @@
     <hr>
     <nav class="box2">
         <ul>
+            <% if(locals.userLogged != null) { %>
     <a href="/productos" class="nav-link">PRODUCTOS</a>
+    
     <a href="/carrito" class="nav-link">CARRITO</a>
+   
     <a href="/productos/agregar" class="nav-link">AGREGAR PRODUCTOS</a>
+    <% } %>
     <a href="/registro/agregar" class="nav-link">REGISTRO</a>
     <a href="/ayuda" class="nav-link">AYUDA</a>
         </ul>
