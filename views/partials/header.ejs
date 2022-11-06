@@ -4,7 +4,9 @@
     <input type="text" placeholder="Buscador" maxlength="40"> 
     <i href="#" class="fa-solid fa-cart-shopping"></i>
     <% if(locals.userLogged) { %>
-        <h2><%= locals.userLogged.nombre%></h2>
+        <img src="<%= locals.userLogged.image %>" alt="<%= userLogged.name %>" width="50px"/>
+        <h2><%= locals.userLogged.name %></h2>
+        
     <% } %>
     <% if(locals.userLogged == null) { %>
     <a href="/registro/login"><h2>INICIAR SESION</h2></a>
@@ -20,7 +22,10 @@
    
     <a href="/productos/agregar" class="nav-link">AGREGAR PRODUCTOS</a>
     <% } %>
+
+    <% if(locals.userLogged == null) { %>
     <a href="/registro/agregar" class="nav-link">REGISTRO</a>
+    <% } %>
     <a href="/ayuda" class="nav-link">AYUDA</a>
         </ul>
     </nav>

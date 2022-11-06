@@ -15,17 +15,17 @@ const storage=multer.diskStorage({
 })
 const upload=multer({storage:storage})
 
-router.get('/borrar/:id',productsController.delete);
-router.delete('/borrar/:id',productsController.processDelete);
+router.get('/borrar/:id',authMiddleware,productsController.delete);
+router.delete('/borrar/:id',authMiddleware,productsController.processDelete);
 
 
-router.get('/agregar/', productsController.create);
+router.get('/agregar/', authMiddleware,productsController.create);
 router.post('/agregarDb',upload.array('pcfiles'),productsController.processCreate);
 
-router.get('/editar/:id',productsController.edit);
+router.get('/editar/:id',authMiddleware,productsController.edit);
 router.put('/editar/:id',upload.array('pcfiles'),productsController.processEdit);
 
-router.get('/detail/:id',productsController.detail);
+router.get('/detail/:id',authMiddleware,productsController.detail);
 router.get('/',productsController.productos);
 
 module.exports=router;
