@@ -1,12 +1,10 @@
 // usuario ya logueado, se redirecciona a '/home'
 
-function validateMiddleware (res, req, next) {
-    if (req.session.userLogged) {
-        return res.redirect ('/home')
-    } 
-    else{
-    next ()
+module.exports = (req,res,next)=>{
+    console.log(req.session.userLogged);
+    
+    if(req.session.userLogged){
+        res.locals.userLogged = req.session.userLogged;
+    }
+    next();
 }
-}
-
-module.exports = validateMiddleware
