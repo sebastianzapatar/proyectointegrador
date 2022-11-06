@@ -13,6 +13,7 @@ const saltRounds = 10;
 // Create - Form to create
 const controller = {
 	login: (req, res) => {
+		console.log(req.session);
 		const htmlPath = path.resolve(__dirname, rutaAbsoluta + 'login');
 		res.render(htmlPath, {
 			user: req.session.userLogged
@@ -110,3 +111,6 @@ const controller = {
 	
 }
 module.exports = controller
+
+
+
