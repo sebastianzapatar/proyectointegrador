@@ -18,38 +18,29 @@
     <%- include('./partials/header') %>
     
     <main class="registro">
-        <section>
-            <div>
+        <section class="sectiondetails">
+            
                 <div>
                     <article>
                         <img src="<%= producto.image%>"  alt="imagen 1" class="product_img">
                     </article>
                 </div>
-            </div>
+                </Section>
+                <Section class="sectiondetails">
+
                 <div>
-                    <h4><%= producto.name_product%></h4>
-                    <p>US$ <%= producto.price%></p>       
+                    <h4 class="tituloDetails"><%= producto.name%></h4>
+                    <p class="tituloDetails">$<%= producto.price%></p>       
                 </div>
     <div>
     <p class="descriptionDetails"><%= producto.description%></p>         
-    <li><a>Garantía un año</a></li>
     </div>
                 <p >
                     <!--<button type="submit" action="/" method="GET">Enviar</button> -->
                     <button type="buy" id = "buy"><i class="fas fa-shopping-bag"></i>Comprar ahora</button>               
                 </p>
-
             </div>
-
         </section>
-
-            <div class="buttonDetailssss">
-            <label> Forma de pago </label>
-            <input type="radio" name="medio" value= "Efectivo"></input>
-            <input type="radio" name="medio" value= "Tarjeta de credito"></input>
-            <input type="radio" name="medio" value= "Tarjeta de debito"></input>
-            </div>
- 
     </main>
 
     <!-- footer -->
