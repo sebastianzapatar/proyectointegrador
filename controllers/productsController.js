@@ -53,7 +53,7 @@ const controller = {
         db.products.destroy({where:{idProduct:id}})
             .then(products => {
 				console.log('resultado' , products);
-                return res.render(path.resolve(__dirname,rutaAbsoluta+'/productos'), {products: []})
+                return res.redirect('/productos');
             })
     .catch(error => res.send(error)) 
 },
@@ -97,20 +97,9 @@ const controller = {
 	},
 	processEdit: (req, res) => {
 		
-		db.products.findAll({
-			include: ['categories']
-        })
-		.then((products)=>{
-			console.log(products);
-			res.render(htmlPath, {
-				products,
-				toThousand,
-				user:req.session.userLogged
-			})
-		 })
-		 .catch(error => res.send(error))
+		
 
-		const htmlPath=path.resolve(__dirname,rutaAbsoluta+'productos');
+		
 		let image;
 		let id = req.params.id;
 		console.log(id);
@@ -132,7 +121,7 @@ const controller = {
         },{
 			where:{idProduct:id}	
 		})
-    .then((productos)=>{
+    .then(productos=>{
        return res.redirect('/productos')
     })
     .catch(error => res.send(error)) 
